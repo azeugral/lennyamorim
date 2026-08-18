@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lenny Amorim Beauty Studio — Nail Design & Manicure | Porto</title>
+<meta name="description" content="Lenny Amorim Beauty Studio — nail design em gel, blindagem signature e manicure de precisão no coração do Porto.">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="icon" href="images/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,500&family=Albert+Sans:wght@400;500;600;700&family=Petit+Formal+Script&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --black:#0b0a09;
+    --black-2:#141210;
+    --black-3:#1c1917;
+    --wine:#7c1620;
+    --wine-light:#a5303b;
+    --wine-deep:#590f17;
+    --gold:#c6a66b;
+    --gold-soft:#d9c39a;
+    --cream:#f4ece1;
+    --taupe:#9c8f80;
+    --taupe-dim:#6b6259;
+
+    --serif: "Fraunces", serif;
+    --script: "Petit Formal Script", cursive;
+    --sans: "Albert Sans", sans-serif;
+
+    --container: 1240px;
+    --edge: clamp(24px, 6vw, 96px);
+    --ease: cubic-bezier(.16,.8,.24,1);
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; scroll-padding-top:88px; }
+  body{
+    margin:0;
+    background:var(--black);
+    color:var(--cream);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; text-decoration:none; }
+  ul{ list-style:none; margin:0; padding:0; }
+  button{ font-family:inherit; cursor:pointer; }
+  h1,h2,h3,h4{ margin:0; font-family:var(--serif); font-weight:600; letter-spacing:-.01em; }
+
+  ::selection{ background:var(--wine); color:var(--cream); }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important; }
+  }
+
+  /* ---------- utility ---------- */
+  .wrap{ max-width:var(--container); margin:0 auto; padding-inline:var(--edge); }
+  .eyebrow{
+    display:flex; align-items:center; gap:10px;
+    font-family:var(--sans); font-size:12px; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--gold); font-weight:600; margin-bottom:18px;
+  }
+  .eyebrow svg{ width:11px; height:11px; flex:none; }
+  .section-head{ max-width:640px; margin-bottom:56px; }
+  .section-head h2{ font-size:clamp(34px,4.4vw,54px); line-height:1.08; }
+  .section-head p{ margin-top:18px; color:var(--taupe); font-size:17px; max-width:52ch; }
+  section{ position:relative; padding-block:clamp(80px,11vw,140px); }
+
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    padding:16px 30px; border-radius:2px;
+    font-size:13px; letter-spacing:.14em; text-transform:uppercase; font-weight:600;
+    border:1px solid transparent; transition:transform .5s var(--ease), background .4s, border-color .4s, color .4s;
+    white-space:nowrap;
+  }
+  .btn svg{ width:15px; height:15px; transition:transform .4s var(--ease); }
+  .btn:hover svg{ transform:translateX(3px); }
+  .btn-primary{ background:var(--wine); color:var(--cream); }
+  .btn-primary:hover{ background:var(--wine-light); transform:translateY(-2px); }
+  .btn-ghost{ border-color:rgba(244,236,225,.28); color:var(--cream); }
+  .btn-ghost:hover{ border-color:var(--gold); color:var(--gold); transform:translateY(-2px); }
+
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{
+    outline:1.5px solid var(--gold); outline-offset:4px;
+  }
+
+  /* reveal */
+  .reveal{ opacity:0; transform:translateY(28px); transition:opacity .9s var(--ease), transform .9s var(--ease); }
+  .reveal.is-visible{ opacity:1; transform:translateY(0); }
+  .reveal-stagger > *{ opacity:0; transform:translateY(24px); transition:opacity .8s var(--ease), transform .8s var(--ease); }
+  .reveal-stagger.is-visible > *{ opacity:1; transform:translateY(0); }
+  .reveal-stagger.is-visible > *:nth-child(1){ transition-delay:.05s; }
+  .reveal-stagger.is-visible > *:nth-child(2){ transition-delay:.14s; }
+  .reveal-stagger.is-visible > *:nth-child(3){ transition-delay:.23s; }
+  .reveal-stagger.is-visible > *:nth-child(4){ transition-delay:.32s; }
+  .reveal-stagger.is-visible > *:nth-child(5){ transition-delay:.41s; }
+  .reveal-stagger.is-visible > *:nth-child(6){ transition-delay:.5s; }
+
+  /* drop icon */
+  .drop{ fill:var(--wine); }
+  .drop.gold{ fill:var(--gold); }
+
+  /* ================= PRELOADER ================= */
+  .preloader{
+    position:fixed; inset:0; z-index:999; background:var(--black);
+    display:flex; align-items:center; justify-content:center; flex-direction:column; gap:18px;
+    transition:opacity .7s var(--ease), visibility .7s var(--ease);
+  }
+  .preloader-mark{ width:56px; height:56px; opacity:0; animation:preloaderIn 1s var(--ease) forwards .1s; }
+  .preloader-line{
+    width:120px; height:1px; background:rgba(244,236,225,.14); position:relative; overflow:hidden;
+    opacity:0; animation:preloaderIn .8s var(--ease) forwards .4s;
+  }
+  .preloader-line::after{
+    content:""; position:absolute; inset:0; width:40%; background:linear-gradient(90deg, transparent, var(--gold), transparent);
+    animation:preloaderSweep 1.3s ease-in-out infinite;
+  }
+  .preloader.done{ opacity:0; visibility:hidden; pointer-events:none; }
+  @keyframes preloaderIn{ 0%{ opacity:0; transform:translateY(6px); } 100%{ opacity:1; transform:translateY(0); } }
+  @keyframes preloaderSweep{ 0%{ transform:translateX(-120%); } 100%{ transform:translateX(340%); } }
+
+  /* ================= SHIMMER TEXT ================= */
+  .shimmer{
+    background-image:linear-gradient(100deg, var(--gold-soft) 25%, #fff 42%, var(--gold-soft) 58%);
+    background-size:250% 100%;
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    animation:shimmer 6s linear infinite;
+  }
+  @keyframes shimmer{ 0%{ background-position:160% 0; } 100%{ background-position:-60% 0; } }
+
+  /* ================= COUNTERS / STATS ================= */
+  .about-facts li.stat{ gap:8px; }
+  .stat-num{
+    font-family:var(--serif); font-size:clamp(30px,3.2vw,40px); line-height:1; color:var(--gold-soft);
+    font-weight:500; letter-spacing:0;
+  }
+  .stat-caption{ display:block; margin-top:4px; }
+
+  /* ================= SCROLLSPY ================= */
+  .nav-links a.active{ color:var(--cream); }
+  .nav-links a.active::after{ width:100%; }
+
+  /* ================= CUSTOM SCROLLBAR ================= */
+  html{ scrollbar-color: var(--gold) var(--black-2); scrollbar-width:thin; }
+  ::-webkit-scrollbar{ width:10px; }
+  ::-webkit-scrollbar-track{ background:var(--black-2); }
+  ::-webkit-scrollbar-thumb{ background:linear-gradient(var(--gold), var(--wine)); border-radius:6px; border:2px solid var(--black-2); }
+
+  /* ================= NAV ================= */
+  .nav{
+    position:fixed; inset:0 0 auto 0; z-index:150;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:22px var(--edge);
+    background:transparent;
+    transition:background .5s var(--ease), padding .5s var(--ease), border-color .5s var(--ease);
+    border-bottom:1px solid transparent;
+  }
+  .nav.scrolled{ background:rgba(11,10,9,.86); backdrop-filter:blur(10px); padding-block:14px; border-color:rgba(244,236,225,.08); }
+  .nav-logo{ display:flex; align-items:center; gap:10px; font-family:var(--script); font-size:26px; color:var(--cream); }
+  .nav-logo img{ height:75px; width:auto; transition:height .5s var(--ease); }
+  .nav.scrolled .nav-logo img{ height:34px; }
+  .nav-links{ display:flex; gap:38px; }
+  .nav-links a{
+    font-size:14px; letter-spacing:.15em; text-transform:uppercase; color:var(--taupe);
+    transition:color .35s; position:relative; padding-bottom:4px;
+  }
+  .nav-links a::after{
+    content:""; position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--gold);
+    transition:width .4s var(--ease);
+  }
+  .nav-links a:hover{ color:var(--cream); }
+  .nav-links a:hover::after{ width:100%; }
+  .nav-cta{ display:flex; align-items:center; gap:22px; }
+  .nav-cta .btn{ padding:11px 22px; font-size:11.5px; }
+  .nav-burger{ display:none; flex-direction:column; gap:5px; background:none; border:none; padding:6px; z-index:120; }
+  .nav-burger span{ width:22px; height:1px; background:var(--cream); transition:transform .35s var(--ease), opacity .35s; }
+  .nav-burger.open span:nth-child(1){ transform:translateY(6px) rotate(45deg); }
+  .nav-burger.open span:nth-child(2){ opacity:0; }
+  .nav-burger.open span:nth-child(3){ transform:translateY(-6px) rotate(-45deg); }
+
+  .mobile-menu{
+    position:fixed; inset:0; background:var(--black); z-index:110;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:34px;
+    transform:translateY(-100%); transition:transform .55s var(--ease);
+  }
+  .mobile-menu.open{ transform:translateY(0); }
+  .mobile-menu a{ font-family:var(--serif); font-size:clamp(15px,7vw,18px); color:var(--cream); }
+  .mobile-menu .btn{ margin-top:10px; }
+
+  /* ================= HERO ================= */
+  .hero{
+    position:relative; min-height:100svh; display:flex; align-items:flex-end;
+    overflow:hidden; padding-top:120px;
+  }
+  .hero-media{ position:absolute; inset:0; z-index:0; }
+  .hero-media img{ width:100%; height:100%; object-fit:cover; object-position:70% 20%; will-change:transform; }
+  .hero-media::after{
+    content:""; position:absolute; inset:0;
+    background:
+      linear-gradient(180deg, rgba(11,10,9,.55) 0%, rgba(11,10,9,.35) 30%, rgba(11,10,9,.55) 68%, rgba(11,10,9,.98) 100%),
+      linear-gradient(90deg, rgba(11,10,9,.92) 0%, rgba(11,10,9,.35) 46%, rgba(11,10,9,.15) 100%);
+  }
+  .hero-grain{
+    position:absolute; inset:0; z-index:1; pointer-events:none; opacity:.25; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .hero-content{ position:relative; z-index:2; width:100%; padding:0 var(--edge) clamp(56px,8vw,96px); }
+  .hero-eyebrow{ font-family:var(--script); font-size:38px; color:var(--gold-soft); margin-bottom:6px; }
+  .hero h1{
+    font-size:clamp(40px,6.4vw,84px); line-height:1.02; max-width:15ch; color:var(--cream);
+    font-weight:500;
+  }
+  .hero h1 em{ font-style:italic; color:var(--gold-soft); font-weight:400; }
+  .hero-sub{ margin-top:26px; max-width:46ch; color:var(--taupe); font-size:16.5px; }
+  .hero-actions{ display:flex; flex-wrap:wrap; gap:18px; margin-top:40px; }
+  .hero-loc{
+    display:flex; align-items:center; flex-wrap:wrap; gap:9px; row-gap:8px; margin-top:52px;
+    font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--taupe-dim);
+  }
+  .hero-loc svg{ width:13px; height:13px; fill:var(--gold); flex:none; }
+  .hero-loc .sep{ opacity:.4; }
+  .hero-rating{ color:var(--gold-soft); letter-spacing:.08em; }
+  .hero-rating-count{ color:var(--taupe-dim); margin-left:4px; text-transform:none; letter-spacing:.02em; }
+
+  .scroll-cue{
+    position:absolute; right:var(--edge); bottom:36px; z-index:2;
+    display:flex; flex-direction:column; align-items:center; gap:12px;
+    font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--taupe);
+  }
+  .scroll-cue .line{ width:1px; height:52px; background:linear-gradient(var(--gold), transparent); position:relative; overflow:hidden; }
+  .scroll-cue .line::after{
+    content:""; position:absolute; top:-40%; left:0; width:100%; height:40%; background:var(--cream);
+    animation:cue 2.4s ease-in-out infinite;
+  }
+  @keyframes cue{ 0%{ top:-40%; } 60%{ top:100%; } 100%{ top:100%; } }
+
+  /* ================= MARQUEE ================= */
+  .marquee-strip{
+    border-top:1px solid rgba(244,236,225,.1); border-bottom:1px solid rgba(244,236,225,.1);
+    padding-block:22px; overflow:hidden; background:var(--black-2);
+  }
+  .marquee-track{ display:flex; width:max-content; animation:scroll-left 34s linear infinite; }
+  .marquee-strip:hover .marquee-track{ animation-play-state:paused; }
+  .marquee-track span{
+    display:flex; align-items:center; gap:22px; padding-inline:22px;
+    font-family:var(--serif); font-style:italic; font-weight:400; font-size:20px; color:var(--taupe);
+    white-space:nowrap;
+  }
+  .marquee-track span svg{ width:9px; height:9px; flex:none; }
+  @keyframes scroll-left{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+
+  /* ================= SOBRE ================= */
+  .about{ }
+  .about .wrap{ display:grid; grid-template-columns:.85fr 1.15fr; gap:clamp(40px,6vw,100px); align-items:center; }
+  .about-media{ position:relative; }
+  .about-media .frame{
+    position:relative; border-radius:2px; overflow:hidden; aspect-ratio:4/5;
+    box-shadow:0 40px 90px -30px rgba(0,0,0,.75);
+  }
+  .about-media .frame img{ width:100%; height:100%; object-fit:cover; }
+  .about-media .frame::after{
+    content:""; position:absolute; inset:0; box-shadow:inset 0 0 0 1px rgba(244,236,225,.14);
+  }
+  .about-media .ring{
+    position:absolute; width:150px; height:150px; border:1px solid var(--gold); border-radius:50%;
+    right:-40px; bottom:-40px; opacity:.55;
+  }
+  .about-body .script-line{ font-family:var(--script); font-size:30px; color:var(--gold-soft); margin-bottom:16px; }
+  .about-body h2{ font-size:clamp(32px,4vw,46px); }
+  .about-body p{ margin-top:22px; color:var(--taupe); font-size:16.5px; max-width:52ch; }
+  .about-facts{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:44px;
+    border-top:1px solid rgba(244,236,225,.12); padding-top:28px;
+  }
+  .about-facts li{ display:flex; flex-direction:column; gap:10px; font-size:13px; color:var(--taupe); }
+  .about-facts li svg{ width:16px; height:16px; }
+
+  /* ================= SERVICES ================= */
+  .services{ background:var(--black-2); }
+
+  .service-categories{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(244,236,225,.1); border:1px solid rgba(244,236,225,.1); }
+  .cat-card{
+    position:relative; background:var(--black-2); border:none; padding:36px 30px 32px;
+    display:flex; flex-direction:column; align-items:flex-start; gap:14px; text-align:left;
+    font-family:inherit; transition:background .45s var(--ease);
+  }
+  .cat-card:hover{ background:var(--black-3); }
+  .cat-card.active{ background:var(--black-3); }
+  .cat-card-icon{ width:32px; height:32px; }
+  .cat-card-icon svg{ width:100%; height:100%; fill:none; stroke:var(--gold); stroke-width:1.2; }
+  .cat-card h3{ font-size:19px; font-weight:500; color:var(--cream); }
+  .cat-card-count{ font-size:12px; letter-spacing:.06em; color:var(--taupe-dim); }
+  .cat-card-chevron{
+    position:absolute; top:34px; right:26px; width:15px; height:15px;
+    fill:none; stroke:var(--gold); stroke-width:1.5; transform:rotate(90deg); transition:transform .45s var(--ease);
+  }
+  .cat-card.active .cat-card-chevron{ transform:rotate(270deg); }
+
+  .service-panel{ display:grid; grid-template-rows:0fr; transition:grid-template-rows .6s var(--ease); }
+  .service-panel.open{ grid-template-rows:1fr; }
+  .service-panel-inner{ overflow:hidden; }
+  .service-list{ display:none; padding-top:8px; }
+  .service-list.is-active{ display:block; }
+  .service-list-item{
+    display:flex; align-items:flex-start; gap:18px; padding:22px 4px;
+    border-bottom:1px solid rgba(244,236,225,.09);
+  }
+  .service-list-item:first-child{ border-top:1px solid rgba(244,236,225,.09); }
+  .sli-icon{ width:26px; height:26px; flex:none; margin-top:2px; }
+  .sli-icon svg{ width:100%; height:100%; fill:none; stroke:var(--gold); stroke-width:1.2; }
+  .sli-text h4{ font-family:var(--serif); font-size:17px; font-weight:500; color:var(--cream); margin:0; }
+  .sli-text p{ margin:6px 0 0; color:var(--taupe); font-size:14px; line-height:1.6; max-width:60ch; }
+
+  .services-note{ margin-top:44px; text-align:center; color:var(--taupe-dim); font-size:13.5px; letter-spacing:.03em; }
+
+  /* ================= PORTFOLIO CAROUSEL ================= */
+  .carousel{ position:relative; }
+  .carousel-viewport{ overflow:hidden; border-radius:2px; box-shadow:0 40px 90px -30px rgba(0,0,0,.75); }
+  .carousel-track{ display:flex; transition:transform .75s var(--ease); will-change:transform; }
+  .carousel-slide{
+    position:relative; flex:0 0 100%; aspect-ratio:16/9; margin:0; overflow:hidden; cursor:zoom-in;
+  }
+  .carousel-slide img{ width:100%; height:100%; object-fit:cover; transition:transform 1.2s var(--ease); }
+  .carousel-slide:hover img{ transform:scale(1.04); }
+  .carousel-slide figcaption{
+    position:absolute; left:0; right:0; bottom:0; padding:16px clamp(18px,4vw,40px) 20px;
+    background:linear-gradient(0deg, rgba(11,10,9,.88), transparent);
+    display:flex; align-items:baseline; gap:14px; pointer-events:none;
+  }
+  .cs-index{ font-family:var(--serif); font-style:italic; color:var(--gold-soft); font-size:14px; }
+  .cs-title{ font-family:var(--serif); font-size:clamp(16px,2vw,22px); color:var(--cream); }
+  .carousel-arrow{
+    position:absolute; top:50%; transform:translateY(-50%); width:52px; height:52px; border-radius:50%;
+    background:rgba(11,10,9,.55); border:1px solid rgba(244,236,225,.26); backdrop-filter:blur(6px);
+    display:flex; align-items:center; justify-content:center; color:var(--cream); transition:all .4s var(--ease); z-index:3;
+  }
+  .carousel-arrow:hover{ background:var(--gold); border-color:var(--gold); color:var(--black); }
+  .carousel-arrow.prev{ left:16px; }
+  .carousel-arrow.next{ right:16px; }
+  .carousel-arrow svg{ width:17px; height:17px; }
+  .carousel-meta{ display:flex; align-items:center; justify-content:space-between; margin-top:26px; }
+  .carousel-dots{ display:flex; flex-wrap:wrap; gap:9px; }
+  .carousel-dot{ width:8px; height:8px; border-radius:50%; background:rgba(244,236,225,.24); transition:all .4s var(--ease); padding:0; border:none; }
+  .carousel-dot.active{ background:var(--gold); width:26px; border-radius:5px; }
+  .carousel-counter{ font-family:var(--serif); font-style:italic; color:var(--taupe); font-size:14px; letter-spacing:.04em; white-space:nowrap; }
+
+  /* lightbox */
+  .lightbox{
+    position:fixed; inset:0; background:rgba(11,10,9,.96); z-index:200;
+    display:flex; align-items:center; justify-content:center; padding:6vw;
+    opacity:0; pointer-events:none; transition:opacity .4s var(--ease);
+  }
+  .lightbox.open{ opacity:1; pointer-events:auto; }
+  .lightbox img{ max-width:100%; max-height:82vh; box-shadow:0 40px 90px rgba(0,0,0,.6); }
+  .lightbox-close{ position:absolute; top:28px; right:var(--edge); background:none; border:none; color:var(--cream); font-size:13px; letter-spacing:.14em; text-transform:uppercase; display:flex; gap:8px; align-items:center; z-index:2; }
+  .lightbox-arrow{
+    position:absolute; top:50%; transform:translateY(-50%); width:52px; height:52px; border-radius:50%;
+    background:rgba(244,236,225,.06); border:1px solid rgba(244,236,225,.24); color:var(--cream);
+    display:flex; align-items:center; justify-content:center; transition:all .4s var(--ease); z-index:2;
+  }
+  .lightbox-arrow:hover{ background:var(--gold); border-color:var(--gold); color:var(--black); }
+  .lightbox-arrow.prev{ left:var(--edge); }
+  .lightbox-arrow.next{ right:var(--edge); }
+  .lightbox-arrow svg{ width:18px; height:18px; }
+  .lightbox-caption{
+    position:absolute; left:0; right:0; bottom:26px; text-align:center;
+    font-family:var(--serif); font-style:italic; color:var(--gold-soft); font-size:15px; z-index:2;
+  }
+
+  /* ================= ESTUDIO ================= */
+  .studio{ border-top:1px solid rgba(244,236,225,.1); }
+  .studio .wrap{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(40px,6vw,90px); }
+  .studio-info h2{ font-size:clamp(32px,4vw,46px); }
+  .studio-city{ font-family:var(--serif); font-style:italic; font-size:22px; color:var(--gold-soft); margin-top:22px; }
+  .studio-note-addr{ color:var(--taupe-dim); font-size:13.5px; margin-top:8px; }
+  .studio-hours{ margin-top:38px; border-top:1px solid rgba(244,236,225,.12); }
+  .studio-hours li{
+    display:flex; justify-content:space-between; padding:16px 0; border-bottom:1px solid rgba(244,236,225,.12);
+    font-size:14.5px; color:var(--taupe);
+  }
+  .studio-hours li span:last-child{ color:var(--cream); letter-spacing:.03em; }
+  .studio-note{ margin-top:26px; font-size:14px; color:var(--taupe); max-width:44ch; line-height:1.7; }
+  .studio-note strong{ color:var(--cream); font-weight:500; }
+  .studio-info .btn{ margin-top:34px; }
+
+  .studio-map{
+    position:relative; border:1px solid rgba(244,236,225,.14); border-radius:2px; overflow:hidden;
+    min-height:340px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:14px;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(124,22,32,.22), transparent 55%),
+      radial-gradient(circle at 75% 70%, rgba(198,166,107,.14), transparent 50%),
+      var(--black-3);
+  }
+  .studio-map svg.pin{ width:30px; height:30px; fill:var(--wine-light); }
+  .studio-map .m-city{ font-family:var(--serif); font-size:24px; color:var(--cream); }
+  .studio-map .m-note{ font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--taupe-dim); }
+  .studio-map .grid-lines{ position:absolute; inset:0; opacity:.12; background-image:linear-gradient(rgba(244,236,225,.5) 1px, transparent 1px), linear-gradient(90deg, rgba(244,236,225,.5) 1px, transparent 1px); background-size:38px 38px; }
+
+  /* ================= TESTEMUNHOS ================= */
+  .testimonials .section-head{ margin-left:auto; margin-right:auto; text-align:center; }
+  .t-carousel .carousel-viewport{ box-shadow:none; border-radius:0; }
+  .t-page{
+    flex:0 0 100%; display:grid; grid-template-columns:repeat(3,1fr); gap:22px; align-items:stretch;
+  }
+  .t-card{
+    border:1px solid rgba(244,236,225,.12); border-radius:2px; padding:34px 28px;
+    display:flex; flex-direction:column; gap:14px; align-items:flex-start; background:var(--black-3);
+  }
+  .t-card svg{ width:24px; height:18px; fill:var(--wine-light); opacity:.8; }
+  .t-stars{ color:var(--gold); font-size:12px; letter-spacing:.14em; }
+  .t-card .t-text{ color:var(--taupe); font-size:14px; line-height:1.7; margin:0; }
+  .t-card .t-line{ width:100%; height:1px; margin-top:auto; background:repeating-linear-gradient(90deg, rgba(244,236,225,.22) 0 6px, transparent 6px 12px); }
+  .t-card .t-label{ display:flex; flex-direction:column; gap:3px; font-family:var(--serif); font-size:15px; color:var(--cream); }
+  .t-card .t-meta{ font-family:var(--sans); font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--taupe-dim); }
+
+  /* ================= CONTACTO ================= */
+  .contact{ background:var(--black-2); }
+  .contact .wrap{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(40px,6vw,90px); align-items:start; }
+  .contact-copy h2{ font-size:clamp(34px,4.6vw,52px); }
+  .contact-copy p{ margin-top:20px; color:var(--taupe); max-width:44ch; }
+  .contact-buttons{ display:flex; flex-direction:column; gap:14px; margin-top:38px; max-width:340px; }
+  .contact-buttons a{
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    border:1px solid rgba(244,236,225,.16); padding:18px 22px; border-radius:2px;
+    transition:border-color .4s, background .4s;
+  }
+  .contact-buttons a:hover{ border-color:var(--gold); background:rgba(198,166,107,.06); }
+  .contact-buttons a .cb-l{ display:flex; align-items:center; gap:14px; font-size:14px; }
+  .contact-buttons a svg{ width:18px; height:18px; }
+  .contact-buttons a .arrow{ width:14px; height:14px; opacity:.5; }
+
+  .form{ display:flex; flex-direction:column; gap:18px; }
+  .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  .field{ display:flex; flex-direction:column; gap:9px; }
+  .field label{ font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--taupe-dim); }
+  .field input, .field select, .field textarea{
+    background:transparent; border:none; border-bottom:1px solid rgba(244,236,225,.24);
+    color:var(--cream); font-family:var(--sans); font-size:15px; padding:10px 2px;
+    transition:border-color .35s;
+  }
+  .field select option{ background:var(--black-2); }
+  .field input:focus, .field select:focus, .field textarea:focus{ border-color:var(--gold); outline:none; }
+  .field textarea{ resize:vertical; min-height:90px; }
+  .form .btn{ margin-top:8px; align-self:flex-start; }
+  .form-note{ font-size:12px; color:var(--taupe-dim); margin-top:-4px; }
+
+  /* ================= FOOTER ================= */
+  footer{ padding-block:56px 34px; border-top:1px solid rgba(244,236,225,.1); }
+  .footer-top{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:30px; padding-bottom:40px; }
+  .footer-logo{ display:flex; align-items:center; gap:12px; }
+  .footer-logo img{ height:75px; width:auto; }
+  .footer-nav{ display:flex; gap:28px; flex-wrap:wrap; }
+  .footer-nav a{ font-size:12.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--taupe); transition:color .35s; }
+  .footer-nav a:hover{ color:var(--gold); }
+  .footer-social{ display:flex; gap:16px; }
+  .footer-social a{
+    width:38px; height:38px; border:1px solid rgba(244,236,225,.18); border-radius:50%;
+    display:flex; align-items:center; justify-content:center; transition:border-color .35s, background .35s;
+  }
+  .footer-social a svg{ width:15px; height:15px; fill:var(--cream); }
+  .footer-social a:hover{ border-color:var(--gold); background:rgba(198,166,107,.08); }
+  .footer-bottom{
+    display:flex; flex-wrap:wrap; justify-content:space-between; gap:14px;
+    padding-top:26px; border-top:1px solid rgba(244,236,225,.08);
+    font-size:12px; color:var(--taupe-dim);
+  }
+  .footer-bottom a{ color:var(--taupe-dim); }
+  .footer-bottom a:hover{ color:var(--gold); }
+
+  /* ================= RESPONSIVE ================= */
+  @media (max-width:980px){
+    .nav-links, .nav-cta .btn{ display:none; }
+    .nav-burger{ display:flex; }
+    .nav-logo img{ height:42px; }
+    .nav.scrolled .nav-logo img{ height:32px; }
+    .about .wrap, .studio .wrap, .contact .wrap{ grid-template-columns:1fr; }
+    .about-media{ max-width:420px; margin-inline:auto; }
+    .service-categories{ grid-template-columns:repeat(2,1fr); }
+    .carousel-slide{ aspect-ratio:4/3.4; }
+    .t-page{ grid-template-columns:1fr 1fr; }
+    .form-row{ grid-template-columns:1fr; }
+    .about-facts{ grid-template-columns:1fr 1fr; }
+    .studio-map{ min-height:260px; }
+    .contact-buttons{ max-width:none; }
+    .footer-top{ justify-content:center; text-align:center; }
+    .footer-nav{ justify-content:center; }
+  }
+  @media (max-width:640px){
+    .hero{ align-items:flex-end; }
+    .hero-media img{ object-position:68% 14%; }
+    .hero-content{ padding-inline:var(--edge); }
+    .hero-actions{ flex-direction:column; align-items:stretch; }
+    .hero-actions .btn{ justify-content:center; }
+    .service-categories{ grid-template-columns:1fr; }
+    .cat-card{ flex-direction:row; align-items:center; padding:22px 26px; gap:16px; }
+    .cat-card-chevron{ top:50%; transform:translateY(-50%) rotate(90deg); }
+    .cat-card.active .cat-card-chevron{ transform:translateY(-50%) rotate(270deg); }
+    .service-list-item{ flex-direction:column; gap:8px; }
+    .hero-eyebrow{ font-size:30px; }
+    .scroll-cue{ display:none; }
+    .about-facts{ grid-template-columns:1fr; }
+    .carousel-slide{ aspect-ratio:4/4.6; }
+    .t-page{ grid-template-columns:1fr; gap:16px; }
+    .carousel-arrow{ width:40px; height:40px; }
+    .carousel-arrow.prev{ left:8px; }
+    .carousel-arrow.next{ right:8px; }
+    .lightbox-arrow{ width:42px; height:42px; }
+    .lightbox-arrow.prev{ left:8px; }
+    .lightbox-arrow.next{ right:8px; }
+    .about-media .ring{ display:none; }
+    .contact-buttons a{ padding:16px 18px; }
+    section{ padding-block:clamp(64px,14vw,96px); }
+  }
+  @media (max-width:400px){
+    :root{ --edge:20px; }
+    .nav-logo img{ height:32px; }
+    .footer-logo img{ height:40px; }
+    .hero h1{ font-size:clamp(34px,9.5vw,44px); }
+    .btn{ padding:14px 22px; font-size:12px; }
+    .form-row{ gap:14px; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ============ PRELOADER ============ -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <img class="preloader-mark" src="images/favicon.png" alt="">
+  <div class="preloader-line"></div>
+</div>
+
+<!-- shared icon defs -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="icon-drop" viewBox="0 0 24 24">
+      <path d="M12 2C12 2 4.5 11.2 4.5 15.8C4.5 20.2 7.9 22.7 12 22.7C16.1 22.7 19.5 20.2 19.5 15.8C19.5 11.2 12 2 12 2Z"/>
+    </symbol>
+    <symbol id="icon-hand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+      <path d="M8 3c0 3-2 4-2 8a6 6 0 0 0 12 0c0-4-2-5-2-8" stroke-linecap="round"/><path d="M8 15c0 4 2.5 6 4 6s4-2 4-6" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-wave" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+      <path d="M12 21c2-6 2-12 0-18M8 20c1-6 1-11 0-16M16 20c-1-6-1-11 0-16" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+      <path d="m12 3 1.8 5.6L19 11l-5.2 2.4L12 19l-1.8-5.6L5 11l5.2-2.4Z" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-drop2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+      <path d="M12 3 4 6.5v5.4C4 16.8 7.4 20.6 12 22c4.6-1.4 8-5.2 8-10.1V6.5Z" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-swirl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+      <path d="M4 13c0-5 3.6-9 9-10 1 5.4-1 9-4 11 2 .3 4 .1 6-1-1 4.4-5 7-9 7-3 0-5-2-5-4 0-1.2.7-2.3 1.5-3Z" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+      <path d="M20 11A8 8 0 1 0 18.6 16" stroke-linecap="round"/><path d="M20 5v6h-6" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-eraser" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+      <path d="M4 16 14 6l4 4-10 10H4v-4Z" stroke-linejoin="round"/><path d="M4 20h16" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-asterisk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+      <path d="M12 3v6M12 15v6M4.5 7l6 3.5M13.5 13.5l6 3.5M19.5 7l-6 3.5M10.5 13.5l-6 3.5" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-circles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+      <circle cx="12" cy="12" r="8.3"/><circle cx="12" cy="12" r="4"/>
+    </symbol>
+    <symbol id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+      <path d="M15 3.5a8.5 8.5 0 1 0 5.5 15A8.5 8.5 0 0 1 15 3.5Z" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-foot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+      <ellipse cx="12" cy="15.5" rx="5" ry="6.8"/><circle cx="7.8" cy="5.3" r="1.3"/><circle cx="11" cy="4.2" r="1.3"/><circle cx="14.2" cy="4.5" r="1.3"/><circle cx="16.8" cy="6" r="1.2"/>
+    </symbol>
+    <symbol id="icon-waves" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+      <path d="M2.5 8c2-2 4-2 6 0s4 2 6 0 4-2 6 0M2.5 14c2-2 4-2 6 0s4 2 6 0 4-2 6 0M2.5 20c2-2 4-2 6 0s4 2 6 0 4-2 6 0" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-crown" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+      <path d="M4 18h16l-1.4-9-4.6 4.4-3-6.6-3 6.6L3.4 9 4 18Z" stroke-linejoin="round" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-brow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+      <path d="M4 15c2-6.5 6.5-10 10.5-10 2 0 3.7 1 4.8 2.2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-lash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+      <path d="M3.5 13.5c4-6 13-6 17 0" stroke-linecap="round"/>
+      <path d="M6.3 11.7 5.3 9.6M9.7 10.2l-.5-2.3M13 10l0-2.3M16.3 10.2l.5-2.3M18.7 11.7l1-2.1" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-lips" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+      <path d="M3.5 12c2.3-3 5.2-3 8.5-1 3.3-2 6.2-2 8.5 1-2.3 3.2-5.2 4.4-8.5 2.2-3.3 2.2-6.2 1-8.5-2.2Z" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-laser" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+      <path d="M4.5 19.5 16 8" stroke-linecap="round"/><path d="M13.3 5 17 8.7M16 3.7l1.8 1.8M19 6.7l1.8 1.8" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-chev-l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M15 6 9 12l6 6" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-chev-r" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="siteNav">
+  <a href="#top" class="nav-logo" aria-label="Lenny Amorim Beauty Studio — início">
+    <img src="images/logo.png" alt="Lenny Amorim Beauty Studio">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#portfolio">Portfólio</a></li>
+    <li><a href="#depoimentos">Depoimentos</a></li>
+    <li><a href="#contacto">Marcações</a></li>
+    <li><a href="#estudio">Estúdio</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a class="btn btn-primary" href="https://wa.me/351939920056?text=Ol%C3%A1%2C%20gostaria%20de%20marcar%20um%20hor%C3%A1rio." target="_blank" rel="noopener">
+      Marcar horário
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <button class="nav-burger" id="burger" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#sobre">Sobre</a>
+  <a href="#servicos">Serviços</a>
+  <a href="#portfolio">Portfólio</a>
+  <a href="#depoimentos">Depoimentos</a>
+  <a href="#contacto">Marcações</a>
+  <a href="#estudio">Estúdio</a>
+  <a class="btn btn-primary" href="https://wa.me/351939920056" target="_blank" rel="noopener">Marcar pelo WhatsApp</a>
+</div>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-media">
+      <img id="heroImg" src="images/hero.jpg" alt="Nail design em gel no Lenny Amorim Beauty Studio, Porto">
+    </div>
+    <div class="hero-grain"></div>
+    <div class="hero-content">
+      <h1>Unhas impecáveis, <em class="shimmer">com a sua assinatura.</em></h1>
+      <p class="hero-sub">Nail design em gel e blindagem signature, num atendimento cuidado e preciso, no coração do Porto. Resultados naturais, duradouros e feitos à sua medida.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://wa.me/351939920056?text=Ol%C3%A1%2C%20gostaria%20de%20marcar%20um%20hor%C3%A1rio." target="_blank" rel="noopener">
+          Marcar o meu horário
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#portfolio">Ver portfólio</a>
+      </div>
+      <div class="hero-loc">
+        <svg viewBox="0 0 24 24"><path d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg>
+        Porto, Portugal
+        <span class="sep">·</span>
+        <span class="hero-rating">★★★★★ 4,9<span class="hero-rating-count">(50+ avaliações no Google)</span></span>
+      </div>
+    </div>
+    <div class="scroll-cue"><span>Deslize</span><span class="line"></span></div>
+  </section>
+
+  <!-- ============ MARQUEE ============ -->
+  <div class="marquee-strip">
+    <div class="marquee-track" id="marqueeTrack">
+      <span>
+        UNHAS EM GEL <svg class="drop"><use href="#icon-drop"/></svg>
+        BLINDAGEM SIGNATURE <svg class="drop"><use href="#icon-drop"/></svg>
+        NAIL ART <svg class="drop"><use href="#icon-drop"/></svg>
+        ENCAPSULADA <svg class="drop"><use href="#icon-drop"/></svg>
+        BABY BOOMER <svg class="drop"><use href="#icon-drop"/></svg>
+        PEDICURE SPA <svg class="drop"><use href="#icon-drop"/></svg>
+        DESIGN DE SOBRANCELHAS <svg class="drop"><use href="#icon-drop"/></svg>
+        LASH LIFT <svg class="drop"><use href="#icon-drop"/></svg>
+      </span>
+      <span aria-hidden="true">
+        UNHAS EM GEL <svg class="drop"><use href="#icon-drop"/></svg>
+        BLINDAGEM SIGNATURE <svg class="drop"><use href="#icon-drop"/></svg>
+        NAIL ART <svg class="drop"><use href="#icon-drop"/></svg>
+        ENCAPSULADA <svg class="drop"><use href="#icon-drop"/></svg>
+        BABY BOOMER <svg class="drop"><use href="#icon-drop"/></svg>
+        PEDICURE SPA <svg class="drop"><use href="#icon-drop"/></svg>
+        DESIGN DE SOBRANCELHAS <svg class="drop"><use href="#icon-drop"/></svg>
+        LASH LIFT <svg class="drop"><use href="#icon-drop"/></svg>
+      </span>
+    </div>
+  </div>
+
+  <!-- ============ SOBRE ============ -->
+  <section class="about" id="sobre">
+    <div class="wrap">
+      <div class="about-media reveal">
+        <div class="frame">
+          <img src="images/sobre.jpg" alt="Lenny Amorim, fundadora do Lenny Amorim Beauty Studio, Porto">
+        </div>
+      </div>
+      <div class="about-body">
+        <div class="eyebrow reveal"><svg class="drop"><use href="#icon-drop"/></svg> a pessoa por trás do negócio</div>
+        <h2 class="reveal">Lenny Amorim</h2>
+        <p class="reveal">No Lenny Amorim Beauty Studio, cada atendimento é pensado ao pormenor. Especialista em nail design, Lenny desenvolveu a sua própria técnica de Blindagem de Unhas (Signature) — um método que une resistência e naturalidade, sem abdicar da elegância do acabamento.</p>
+        <p class="reveal">Do primeiro contacto até à manutenção, o cuidado é o mesmo: escutar o que a cliente procura, usar produtos de qualidade e devolver umas unhas que duram — e que se sentem bem nas mãos de quem as usa.</p>
+        <p class="script-line reveal">unhas com alma, feitas à sua medida.</p>
+        <ul class="about-facts reveal-stagger">
+          <li><svg class="drop gold"><use href="#icon-drop"/></svg> Criadora da técnica de Blindagem de Unhas (Signature)</li>
+          <li class="stat">
+            <span class="stat-num"><span class="counter" data-target="4.9" data-decimals="1">0</span></span>
+            <span class="stat-caption">avaliação média no Google</span>
+          </li>
+          <li class="stat">
+            <span class="stat-num"><span class="counter" data-target="50" data-suffix="+">0</span></span>
+            <span class="stat-caption">avaliações verificadas de clientes</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVIÇOS ============ -->
+  <section class="services" id="servicos">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow"><svg class="drop"><use href="#icon-drop"/></svg> o que fazemos</div>
+        <h2>Serviços</h2>
+        <p>Mais de 20 técnicas entre unhas, pés, sobrancelhas e pestanas. Escolha uma área para ver os detalhes.</p>
+      </div>
+    </div>
+    <div class="wrap" style="padding:0">
+      <div class="service-categories reveal-stagger" id="serviceCategories">
+        <button class="cat-card" data-cat="unhas" aria-expanded="false">
+          <div class="cat-card-icon"><svg viewBox="0 0 24 24"><use href="#icon-hand"/></svg></div>
+          <h3>Unhas</h3>
+          <span class="cat-card-count">9 serviços</span>
+          <svg class="cat-card-chevron" viewBox="0 0 24 24"><use href="#icon-chev-r"/></svg>
+        </button>
+        <button class="cat-card" data-cat="nailart" aria-expanded="false">
+          <div class="cat-card-icon"><svg viewBox="0 0 24 24"><use href="#icon-asterisk"/></svg></div>
+          <h3>Nail Art &amp; Efeitos</h3>
+          <span class="cat-card-count">3 serviços</span>
+          <svg class="cat-card-chevron" viewBox="0 0 24 24"><use href="#icon-chev-r"/></svg>
+        </button>
+        <button class="cat-card" data-cat="pes" aria-expanded="false">
+          <div class="cat-card-icon"><svg viewBox="0 0 24 24"><use href="#icon-foot"/></svg></div>
+          <h3>Pés</h3>
+          <span class="cat-card-count">4 serviços</span>
+          <svg class="cat-card-chevron" viewBox="0 0 24 24"><use href="#icon-chev-r"/></svg>
+        </button>
+        <button class="cat-card" data-cat="rosto" aria-expanded="false">
+          <div class="cat-card-icon"><svg viewBox="0 0 24 24"><use href="#icon-brow"/></svg></div>
+          <h3>Rosto &amp; Corpo</h3>
+          <span class="cat-card-count">4 serviços</span>
+          <svg class="cat-card-chevron" viewBox="0 0 24 24"><use href="#icon-chev-r"/></svg>
+        </button>
+      </div>
+
+      <div class="service-panel" id="servicePanel">
+        <div class="service-panel-inner">
+          <div class="service-list" data-cat="unhas">
+            <div class="service-list-item">
+              <div class="sli-icon"><svg viewBox="0 0 24 24"><use href="#icon-hand"/></svg></div>
+              <div class="sli-text"><h4>Aplicação de Unhas em Gel</h4><p>Alongamento e modelação em gel, com acabamento fino e natural, à medida da forma da sua mão.</p></div>
+            </div>
+            <div class="service-list-item">
+              <div class="sli-icon"><svg viewBox="0 0 24 24"><use href="#icon-wave"/></svg></div>
+              <div class="sli-text"><h4>Blindagem de Unhas (Signature)</h4><p>A técnica de assinatura de Lenny Amorim: reforço e proteção da unha natural, com resistência e brilho duradouros.</p></div>
+            </div>
+            <div class="service-list-item">
+              <div class="sli-icon"><svg viewBox="0 0 24 24"><use href="#icon-spark"/></svg></div>
+              <div class="sli-text"><h4>Aplicação de Gel na Unha Natural</h4><p>Reforço em gel sobre a unha natural, para mais resistência sem perder a leveza do acabamento.</p></div>
+            </div>
+            <div class="service-list-item">
+              <div class="sli-icon"><svg viewBox="0 0 24 24"><use href="#icon-drop2"/></svg></div>
+              <div class="sli-text"><h4>Verniz Gel</h4><p>Cor uniforme e brilho intenso que se mantém impecável durante semanas.</p></div>
+            </div>
+            <div class="service-list-item">
+              <div class="sli-icon"><svg viewBox="0 0 24 24"><use href="#icon-swirl"/></svg></div>
+              <div class="sli-text"><h4>Verniz Tradicional</h4><p>Aplicação cuidada de verniz clássico, para quem prefere um acabamento simples e elegante.</p></div>
+            </div>
+            <div class="service-list-item">
+              <div class="sli-icon"><svg viewBox="0 0 24 24"><use href="#icon-refresh"/></svg></div>
+              <div class="sli-text"><h4>Manutenção de Unhas</h4><p>Retoque regular que preserva o resultado do trabalho inicial, semana após semana.</p></div>
+            </div>
+            <div class="service-list-item">
+              <div class="sli-icon"><svg viewBox="0 0 24 24"><use href="#icon-eraser"/></svg></div>
+              <div class="sli-text"><h4>Remoção de Produto</h4><p>Remoção segura de gel ou acrílico, sem agredir a unha natural.</p></div>
+            </div>
+            <div class="service-list-item">
+              <div class="sli-icon"><svg viewBox="0 0 24 24"><use href="#icon-drop2"/></svg></div>
+              <div class="sli-text"><h4>Cuticulagem</h4><p>Tratamento e cuidado das cutículas, para umas mãos visivelmente mais saudáveis.</p></div>
+            </div>
+            <div class="service-list-item">
+              <div class="sli-icon"><svg viewBox="0 0 24 24"><use href="#icon-refresh"/></svg></div>
+              <div class="sli-text"><h4>Reposição de Unhas</h4><p>Reparação e reposição pontual, para manter o conjunto sempre perfeito entre manutenções.</p></div>
+            </div>
+          </div>
+
+          <div class="service-list" data-cat="nailart">
+            <div class="service-list-item">
+              <div class="sli-icon"><svg viewBox="0 0 24 24"><use href="#icon-asterisk"/></svg></div>
+              <div class="sli-text"><h4>Nail Art (Decoração)</h4><p>Desenhos, traços finos e detalhes personalizados para um acabamento único e cheio de personalidade.</p></div>
+            </div>
+            <div class="service-list-item">
+              <div class="sli-icon"><svg viewBox="0 0 24 24"><use href="#icon-circles"/></svg></div>
+              <div class="sli-text"><h4>Encapsulada</h4><p>Flores secas, glitter ou pigmentos selados dentro do gel, para um efeito tridimensional que dura semanas.</p></div>
+            </div>
+            <div class="service-list-item">
+              <div class="sli-icon"><svg viewBox="0 0 24 24"><use href="#icon-moon"/></svg></div>
+              <div class="sli-text"><h4>Baby Boomer / Francesa Perfeita</h4><p>Degradê suave do nude ao branco ou a clássica francesa, com transição impecável.</p></div>
+            </div>
+          </div>
+
+          <div class="service-list" data-cat="pes">
+            <div class="service-list-item">
+              <div class="sli-icon"><svg viewBox="0 0 24 24"><use href="#icon-foot"/></svg></div>
+              <div class="sli-text"><h4>Pedicure com Verniz Gel</h4><p>Cuidado completo dos pés com aplicação de verniz gel de alta durabilidade e brilho.</p></div>
+            </div>
+            <div class="service-list-item">
+              <div class="sli-icon"><svg viewBox="0 0 24 24"><use href="#icon-waves"/></svg></div>
+              <div class="sli-text"><h4>Pedicure Spa dos Pés</h4><p>Esfoliação, hidratação e massagem relaxante, para uns pés visivelmente mais macios.</p></div>
+            </div>
+            <div class="service-list-item">
+              <div class="sli-icon"><svg viewBox="0 0 24 24"><use href="#icon-crown"/></svg></div>
+              <div class="sli-text"><h4>Pedicure Spa dos Pés Premium</h4><p>A experiência spa elevada — tratamento mais demorado, com máscara e massagem prolongada.</p></div>
+            </div>
+            <div class="service-list-item">
+              <div class="sli-icon"><svg viewBox="0 0 24 24"><use href="#icon-foot"/></svg></div>
+              <div class="sli-text"><h4>Pedicure com Plástica dos Pés</h4><p>Remoção de durezas e calosidades, devolvendo suavidade e conforto ao andar.</p></div>
+            </div>
+          </div>
+
+          <div class="service-list" data-cat="rosto">
+            <div class="service-list-item">
+              <div class="sli-icon"><svg viewBox="0 0 24 24"><use href="#icon-brow"/></svg></div>
+              <div class="sli-text"><h4>Design de Sobrancelhas</h4><p>Modelação que realça o olhar, respeitando a forma natural de cada sobrancelha.</p></div>
+            </div>
+            <div class="service-list-item">
+              <div class="sli-icon"><svg viewBox="0 0 24 24"><use href="#icon-lash"/></svg></div>
+              <div class="sli-text"><h4>Lash Lift (Lifting de Pestanas)</h4><p>Curvatura e elevação natural das pestanas, sem necessidade de extensões.</p></div>
+            </div>
+            <div class="service-list-item">
+              <div class="sli-icon"><svg viewBox="0 0 24 24"><use href="#icon-lips"/></svg></div>
+              <div class="sli-text"><h4>Hidragloss Labial</h4><p>Tratamento hidratante que devolve viço, volume e brilho natural aos lábios.</p></div>
+            </div>
+            <div class="service-list-item">
+              <div class="sli-icon"><svg viewBox="0 0 24 24"><use href="#icon-laser"/></svg></div>
+              <div class="sli-text"><h4>Depilação a Laser</h4><p>Redução progressiva e duradoura dos pelos, com sessões seguras e confortáveis.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="services-note reveal">Valores sob consulta — marque a sua avaliação pelo WhatsApp ou pelo formulário abaixo.</p>
+    </div>
+  </section>
+
+  <!-- ============ PORTFÓLIO ============ -->
+  <section id="portfolio">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow"><svg class="drop"><use href="#icon-drop"/></svg> trabalhos</div>
+        <h2>Portfólio</h2>
+        <p>Uma amostra dos trabalhos feitos no estúdio. Deslize, use as setas ou clique numa imagem para ampliar.</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="carousel reveal" id="portfolioCarousel">
+        <div class="carousel-viewport">
+          <div class="carousel-track" id="carouselTrack">
+            <figure class="carousel-slide" data-index="0">
+              <img src="images/portfolio-01-verniz-chocolate.jpg" alt="Verniz Gel Chocolate Intenso — Lenny Amorim Beauty Studio" loading="lazy">
+              <figcaption><span class="cs-index">01</span><span class="cs-title">Verniz Gel — Chocolate Intenso</span></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-index="1">
+              <img src="images/portfolio-02-nail-art-poa.jpg" alt="Nail Art poá minimalista — Lenny Amorim Beauty Studio" loading="lazy">
+              <figcaption><span class="cs-index">02</span><span class="cs-title">Nail Art — Poá Minimalista</span></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-index="2">
+              <img src="images/portfolio-03-francesa-dourada.jpg" alt="Francesa com traço dourado — Lenny Amorim Beauty Studio" loading="lazy">
+              <figcaption><span class="cs-index">03</span><span class="cs-title">Francesa com Traço Dourado</span></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-index="3">
+              <img src="images/portfolio-04-verniz-nude.jpg" alt="Verniz Gel nude amendoado — Lenny Amorim Beauty Studio" loading="lazy">
+              <figcaption><span class="cs-index">04</span><span class="cs-title">Verniz Gel — Nude Amendoado</span></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-index="4">
+              <img src="images/portfolio-05-nail-art-natal.jpg" alt="Nail Art com motivo natalício — Lenny Amorim Beauty Studio" loading="lazy">
+              <figcaption><span class="cs-index">05</span><span class="cs-title">Nail Art — Motivo Natalício</span></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-index="5">
+              <img src="images/portfolio-06-encapsulada-prata.jpg" alt="Encapsulada com textura prateada — Lenny Amorim Beauty Studio" loading="lazy">
+              <figcaption><span class="cs-index">06</span><span class="cs-title">Encapsulada — Textura Prateada</span></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-index="6">
+              <img src="images/portfolio-07-verniz-rose-glitter.jpg" alt="Verniz Gel rosé com glitter — Lenny Amorim Beauty Studio" loading="lazy">
+              <figcaption><span class="cs-index">07</span><span class="cs-title">Verniz Gel — Rosé Glitter</span></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-index="7">
+              <img src="images/portfolio-08-baby-boomer-dourado.jpg" alt="Baby Boomer com glitter dourado — Lenny Amorim Beauty Studio" loading="lazy">
+              <figcaption><span class="cs-index">08</span><span class="cs-title">Baby Boomer — Glitter Dourado</span></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-index="8">
+              <img src="images/portfolio-09-baby-boomer-francesa.jpg" alt="Baby Boomer e francesa perfeita — Lenny Amorim Beauty Studio" loading="lazy">
+              <figcaption><span class="cs-index">09</span><span class="cs-title">Baby Boomer / Francesa Perfeita</span></figcaption>
+            </figure>
+          </div>
+        </div>
+        <button class="carousel-arrow prev" id="carPrev" aria-label="Trabalho anterior">
+          <svg viewBox="0 0 24 24"><use href="#icon-chev-l"/></svg>
+        </button>
+        <button class="carousel-arrow next" id="carNext" aria-label="Próximo trabalho">
+          <svg viewBox="0 0 24 24"><use href="#icon-chev-r"/></svg>
+        </button>
+        <div class="carousel-meta">
+          <div class="carousel-dots" id="carDots"></div>
+          <div class="carousel-counter"><span id="carCurrent">01</span> / <span id="carTotal">09</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">Fechar
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="m5 5 14 14M19 5 5 19"/></svg>
+    </button>
+    <button class="lightbox-arrow prev" id="lightboxPrev" aria-label="Anterior">
+      <svg viewBox="0 0 24 24"><use href="#icon-chev-l"/></svg>
+    </button>
+    <img id="lightboxImg" src="" alt="">
+    <button class="lightbox-arrow next" id="lightboxNext" aria-label="Seguinte">
+      <svg viewBox="0 0 24 24"><use href="#icon-chev-r"/></svg>
+    </button>
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+
+  <!-- ============ DEPOIMENTOS ============ -->
+  <section class="testimonials" id="depoimentos">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow" style="justify-content:center"><svg class="drop"><use href="#icon-drop"/></svg> clientes reais</div>
+        <h2>Depoimentos</h2>
+        <p style="margin-inline:auto">Direto do Google — mais de 50 avaliações e uma nota média de 4,9/5. Estas são algumas das mais recentes.</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="carousel t-carousel reveal" id="testimonialCarousel">
+        <div class="carousel-viewport">
+          <div class="carousel-track" id="tCarouselTrack">
+
+            <div class="t-page">
+              <div class="t-card">
+                <svg viewBox="0 0 32 24"><path d="M0 24V13.5C0 6 4.5 1 12 0l1 4.5C8 5.5 5.5 8 5 12h7v12H0Zm18 0V13.5C18 6 22.5 1 30 0l1 4.5C26 5.5 23.5 8 23 12h7v12H18Z"/></svg>
+                <div class="t-stars">★★★★★</div>
+                <p class="t-text">"Com certeza as melhores unhas que já fiz, impecável! O acabamento da cutícula é perfeito e nem parece que faço alongamentos. Recomendo a todas que querem um momento de auto cuidado num ambiente calmo e aconchegante."</p>
+                <div class="t-line"></div>
+                <span class="t-label">Hanna<span class="t-meta">Local Guide · Google</span></span>
+              </div>
+              <div class="t-card">
+                <svg viewBox="0 0 32 24"><path d="M0 24V13.5C0 6 4.5 1 12 0l1 4.5C8 5.5 5.5 8 5 12h7v12H0Zm18 0V13.5C18 6 22.5 1 30 0l1 4.5C26 5.5 23.5 8 23 12h7v12H18Z"/></svg>
+                <div class="t-stars">★★★★★</div>
+                <p class="t-text">"Conheci a Lenny através do Instagram, onde ela posta a maioria dos seus trabalhos, e foi amor à primeira vista! Hoje não há nada que me faça sair de lá. Todos os trabalhos feitos e entregues por ela e pela Sara são perfeitos. Recomendo 1000 vezes."</p>
+                <div class="t-line"></div>
+                <span class="t-label">Larissa Dantas Oliveira<span class="t-meta">Cliente Google</span></span>
+              </div>
+              <div class="t-card">
+                <svg viewBox="0 0 32 24"><path d="M0 24V13.5C0 6 4.5 1 12 0l1 4.5C8 5.5 5.5 8 5 12h7v12H0Zm18 0V13.5C18 6 22.5 1 30 0l1 4.5C26 5.5 23.5 8 23 12h7v12H18Z"/></svg>
+                <div class="t-stars">★★★★★</div>
+                <p class="t-text">"Fui por indicação e simplesmente amei o atendimento! Fui muito bem recebida do começo ao fim, com muito carinho e profissionalismo. O resultado das minhas unhas superou todas as minhas expectativas. Nota mil!"</p>
+                <div class="t-line"></div>
+                <span class="t-label">Maria Clara<span class="t-meta">Cliente Google</span></span>
+              </div>
+            </div>
+
+            <div class="t-page">
+              <div class="t-card">
+                <svg viewBox="0 0 32 24"><path d="M0 24V13.5C0 6 4.5 1 12 0l1 4.5C8 5.5 5.5 8 5 12h7v12H0Zm18 0V13.5C18 6 22.5 1 30 0l1 4.5C26 5.5 23.5 8 23 12h7v12H18Z"/></svg>
+                <div class="t-stars">★★★★★</div>
+                <p class="t-text">"Um espaço simplesmente irrepreensível. Desde o momento em que entramos, sentimos imediatamente o cuidado e a atenção a cada detalhe — tudo extremamente higienizado, sempre com um ambiente cheiroso, bonito, calmo e harmonioso."</p>
+                <div class="t-line"></div>
+                <span class="t-label">Alexandra Vieira<span class="t-meta">Cliente Google</span></span>
+              </div>
+              <div class="t-card">
+                <svg viewBox="0 0 32 24"><path d="M0 24V13.5C0 6 4.5 1 12 0l1 4.5C8 5.5 5.5 8 5 12h7v12H0Zm18 0V13.5C18 6 22.5 1 30 0l1 4.5C26 5.5 23.5 8 23 12h7v12H18Z"/></svg>
+                <div class="t-stars">★★★★★</div>
+                <p class="t-text">"Estou encantada com o trabalho, cuidado e resultado do laser que fiz no studio. Logo na primeira sessão já é nítida a diferença e estou ansiosa para a próxima. Indico de olhos fechados!"</p>
+                <div class="t-line"></div>
+                <span class="t-label">Renata Godio<span class="t-meta">Cliente Google</span></span>
+              </div>
+              <div class="t-card">
+                <svg viewBox="0 0 32 24"><path d="M0 24V13.5C0 6 4.5 1 12 0l1 4.5C8 5.5 5.5 8 5 12h7v12H0Zm18 0V13.5C18 6 22.5 1 30 0l1 4.5C26 5.5 23.5 8 23 12h7v12H18Z"/></svg>
+                <div class="t-stars">★★★★★</div>
+                <p class="t-text">"Num espaço muito acolhedor, a Lenny desenvolve um trabalho criativo e perfeito. Sempre à procura de inovação para melhor e maior durabilidade da manicure e pedicure. O seu trabalho faz a diferença."</p>
+                <div class="t-line"></div>
+                <span class="t-label">Fernanda Viegas<span class="t-meta">Cliente Google</span></span>
+              </div>
+            </div>
+
+            <div class="t-page">
+              <div class="t-card">
+                <svg viewBox="0 0 32 24"><path d="M0 24V13.5C0 6 4.5 1 12 0l1 4.5C8 5.5 5.5 8 5 12h7v12H0Zm18 0V13.5C18 6 22.5 1 30 0l1 4.5C26 5.5 23.5 8 23 12h7v12H18Z"/></svg>
+                <div class="t-stars">★★★★★</div>
+                <p class="t-text">"It is a blessing to find Lenny in Porto. I have done manicure in Taiwan, Germany and Portugal. Lenny's skill and aesthetic taste is 🔝. I couldn't recommend her more."</p>
+                <div class="t-line"></div>
+                <span class="t-label">DH<span class="t-meta">Local Guide · Google</span></span>
+              </div>
+              <div class="t-card">
+                <svg viewBox="0 0 32 24"><path d="M0 24V13.5C0 6 4.5 1 12 0l1 4.5C8 5.5 5.5 8 5 12h7v12H0Zm18 0V13.5C18 6 22.5 1 30 0l1 4.5C26 5.5 23.5 8 23 12h7v12H18Z"/></svg>
+                <div class="t-stars">★★★★★</div>
+                <p class="t-text">"A melhor do Porto — entrega delicadeza e naturalidade às unhas. Um serviço todo personalizado e cada detalhe pensado com muito carinho. Agora fazem depilação a laser: já desde a primeira sessão notei uma diferença enorme!"</p>
+                <div class="t-line"></div>
+                <span class="t-label">Amanda Laís Silva<span class="t-meta">Local Guide · Google</span></span>
+              </div>
+              <div class="t-card">
+                <svg viewBox="0 0 32 24"><path d="M0 24V13.5C0 6 4.5 1 12 0l1 4.5C8 5.5 5.5 8 5 12h7v12H0Zm18 0V13.5C18 6 22.5 1 30 0l1 4.5C26 5.5 23.5 8 23 12h7v12H18Z"/></svg>
+                <div class="t-stars">★★★★★</div>
+                <p class="t-text">"A Lenny é uma profissional de excelência. Muito cuidadosa, perfeccionista e super amorosa. Já sou cliente há dois anos e não troco por nada!"</p>
+                <div class="t-line"></div>
+                <span class="t-label">Joana Machado<span class="t-meta">Cliente Google</span></span>
+              </div>
+            </div>
+
+            <div class="t-page">
+              <div class="t-card">
+                <svg viewBox="0 0 32 24"><path d="M0 24V13.5C0 6 4.5 1 12 0l1 4.5C8 5.5 5.5 8 5 12h7v12H0Zm18 0V13.5C18 6 22.5 1 30 0l1 4.5C26 5.5 23.5 8 23 12h7v12H18Z"/></svg>
+                <div class="t-stars">★★★★★</div>
+                <p class="t-text">"Tenho vindo diretamente da Irlanda para fazer as minhas unhas com a Lenny e com a Sara. Não encontro ninguém com umas habilidades tão maravilhosas quanto elas. Atendimento impecável."</p>
+                <div class="t-line"></div>
+                <span class="t-label">Gisela Plasta<span class="t-meta">Cliente Google</span></span>
+              </div>
+              <div class="t-card">
+                <svg viewBox="0 0 32 24"><path d="M0 24V13.5C0 6 4.5 1 12 0l1 4.5C8 5.5 5.5 8 5 12h7v12H0Zm18 0V13.5C18 6 22.5 1 30 0l1 4.5C26 5.5 23.5 8 23 12h7v12H18Z"/></svg>
+                <div class="t-stars">★★★★★</div>
+                <p class="t-text">"Serviços excecionais! Localização ideal! Profissionais excelentes, dedicadas ao bem-estar e satisfação da cliente. Recomendo totalmente. Espaço agradável, elegante e muito cuidado."</p>
+                <div class="t-line"></div>
+                <span class="t-label">Isaura Loureiro<span class="t-meta">Cliente Google</span></span>
+              </div>
+              <div class="t-card">
+                <svg viewBox="0 0 32 24"><path d="M0 24V13.5C0 6 4.5 1 12 0l1 4.5C8 5.5 5.5 8 5 12h7v12H0Zm18 0V13.5C18 6 22.5 1 30 0l1 4.5C26 5.5 23.5 8 23 12h7v12H18Z"/></svg>
+                <div class="t-stars">★★★★★</div>
+                <p class="t-text">"Estou completamente apaixonada pelas minhas unhas! É uma profissional muito carinhosa e super perfeita. Muito obrigada por essa perfeição — super recomendo."</p>
+                <div class="t-line"></div>
+                <span class="t-label">Cris Sousa<span class="t-meta">Cliente Google</span></span>
+              </div>
+            </div>
+
+            <div class="t-page">
+              <div class="t-card">
+                <svg viewBox="0 0 32 24"><path d="M0 24V13.5C0 6 4.5 1 12 0l1 4.5C8 5.5 5.5 8 5 12h7v12H0Zm18 0V13.5C18 6 22.5 1 30 0l1 4.5C26 5.5 23.5 8 23 12h7v12H18Z"/></svg>
+                <div class="t-stars">★★★★★</div>
+                <p class="t-text">"Não poderia ter escolhido melhor profissional — entreguei as minhas mãos e pés na melhor profissional que pode existir. Um estúdio bem acolhedor e com uma tranquilidade que não se encontra. Indico a 100%."</p>
+                <div class="t-line"></div>
+                <span class="t-label">Sara Ribeiro<span class="t-meta">Cliente Google</span></span>
+              </div>
+              <div class="t-card">
+                <svg viewBox="0 0 32 24"><path d="M0 24V13.5C0 6 4.5 1 12 0l1 4.5C8 5.5 5.5 8 5 12h7v12H0Zm18 0V13.5C18 6 22.5 1 30 0l1 4.5C26 5.5 23.5 8 23 12h7v12H18Z"/></svg>
+                <div class="t-stars">★★★★★</div>
+                <p class="t-text">"Melhor experiência até hoje — máximo profissionalismo, qualidade de serviço, atendimento e espaço lindo, obrigada!"</p>
+                <div class="t-line"></div>
+                <span class="t-label">Isabel Quitério<span class="t-meta">Cliente Google</span></span>
+              </div>
+              <div class="t-card">
+                <svg viewBox="0 0 32 24"><path d="M0 24V13.5C0 6 4.5 1 12 0l1 4.5C8 5.5 5.5 8 5 12h7v12H0Zm18 0V13.5C18 6 22.5 1 30 0l1 4.5C26 5.5 23.5 8 23 12h7v12H18Z"/></svg>
+                <div class="t-stars">★★★★★</div>
+                <p class="t-text">"Super recomendo a Lenny Amorim! Profissional incrível, muito atenciosa e cuidadosa em cada detalhe. As unhas ficam sempre impecáveis, com acabamento perfeito e muita durabilidade. Sem dúvida, a melhor escolha no Porto!"</p>
+                <div class="t-line"></div>
+                <span class="t-label">Catia Silva<span class="t-meta">Cliente Google</span></span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <button class="carousel-arrow prev" id="tPrev" aria-label="Depoimentos anteriores">
+          <svg viewBox="0 0 24 24"><use href="#icon-chev-l"/></svg>
+        </button>
+        <button class="carousel-arrow next" id="tNext" aria-label="Próximos depoimentos">
+          <svg viewBox="0 0 24 24"><use href="#icon-chev-r"/></svg>
+        </button>
+        <div class="carousel-meta">
+          <div class="carousel-dots" id="tDots"></div>
+          <a href="https://www.google.com/maps/place/Lenny+Amorim+Beauty+Studio/@41.1656439,-8.598053,831m/data=!3m2!1e3!5s0xd24645c228d363d:0xc639e6c6e9a3cd40!4m8!3m7!1s0xd2465291347763d:0x82c7d230d2717b89!8m2!3d41.1656439!4d-8.598053!9m1!1b1!16s%2Fg%2F11kj4r5jq9?entry=ttu&g_ep=EgoyMDI2MDgxNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" class="carousel-counter" style="text-decoration:underline; text-underline-offset:3px;">Ver todas no Google ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACTO ============ -->
+  <section class="contact" id="contacto">
+    <div class="wrap">
+      <div class="contact-copy reveal">
+        <div class="eyebrow"><svg class="drop"><use href="#icon-drop"/></svg> vamos começar</div>
+        <h2>Vamos agendar o seu próximo horário?</h2>
+        <p>Escreva diretamente pelo WhatsApp ou preencha o formulário ao lado — a resposta chega em breve.</p>
+        <div class="contact-buttons">
+          <a href="https://wa.me/351939920056?text=Ol%C3%A1%2C%20gostaria%20de%20marcar%20um%20hor%C3%A1rio." target="_blank" rel="noopener">
+            <span class="cb-l">
+              <svg viewBox="0 0 24 24" fill="var(--gold)"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.9-1.3C8.4 21.6 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2Zm5.7 14.2c-.2.6-1.3 1.2-1.8 1.3-.5.1-1 .2-3.2-.7-2.7-1.1-4.4-3.9-4.5-4.1-.1-.2-1.1-1.4-1.1-2.7 0-1.3.7-1.9.9-2.2.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.6.7 1.9.8 2 .1.2.1.4 0 .6-.1.2-.2.3-.3.5-.2.2-.3.3-.5.5-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.2 2.4 1.5 2.7 1.7.3.2.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.7.8 2 .9.3.2.5.2.6.3.1.2.1.8-.1 1.4Z"/></svg>
+              WhatsApp
+            </span>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="https://instagram.com/lennyamorimstudio" target="_blank" rel="noopener">
+            <span class="cb-l">
+              <svg viewBox="0 0 24 24" fill="var(--gold)"><path d="M12 2.2c2.7 0 3 0 4.1.06 1.1.05 1.8.22 2.4.46.6.24 1.1.55 1.6 1.06.5.5.82 1 1.06 1.6.24.6.4 1.3.46 2.4.06 1.1.06 1.4.06 4.1s0 3-.06 4.1c-.05 1.1-.22 1.8-.46 2.4a4.3 4.3 0 0 1-1.06 1.6c-.5.5-1 .82-1.6 1.06-.6.24-1.3.4-2.4.46-1.1.06-1.4.06-4.1.06s-3 0-4.1-.06c-1.1-.05-1.8-.22-2.4-.46a4.3 4.3 0 0 1-1.6-1.06 4.3 4.3 0 0 1-1.06-1.6c-.24-.6-.4-1.3-.46-2.4C2.2 15 2.2 14.7 2.2 12s0-3 .06-4.1c.05-1.1.22-1.8.46-2.4.24-.6.55-1.1 1.06-1.6.5-.5 1-.82 1.6-1.06.6-.24 1.3-.4 2.4-.46C9 2.2 9.3 2.2 12 2.2Zm0 1.8c-2.65 0-2.96 0-4.02.06-.9.04-1.4.18-1.72.31-.43.17-.75.37-1.08.7-.33.33-.53.65-.7 1.08-.13.32-.27.82-.31 1.72C4.1 9.04 4.1 9.35 4.1 12s0 2.96.06 4.02c.04.9.18 1.4.31 1.72.17.43.37.75.7 1.08.33.33.65.53 1.08.7.32.13.82.27 1.72.31 1.06.06 1.37.06 4.02.06s2.96 0 4.02-.06c.9-.04 1.4-.18 1.72-.31.43-.17.75-.37 1.08-.7.33-.33.53-.65.7-1.08.13-.32.27-.82.31-1.72.06-1.06.06-1.37.06-4.02s0-2.96-.06-4.02c-.04-.9-.18-1.4-.31-1.72a2.9 2.9 0 0 0-.7-1.08 2.9 2.9 0 0 0-1.08-.7c-.32-.13-.82-.27-1.72-.31C14.96 4 14.65 4 12 4Zm0 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm0 1.8a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4Zm4.7-2a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1Z"/></svg>
+              Instagram
+            </span>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="https://online.maapp.com.br/Lennyamorimbeautystudio" target="_blank" rel="noopener">
+            <span class="cb-l">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke-linecap="round"/></svg>
+              Marcar online
+            </span>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <form class="form reveal" id="contactForm">
+        <div class="form-row">
+          <div class="field">
+            <label for="f-nome">Nome</label>
+            <input type="text" id="f-nome" name="nome" required>
+          </div>
+          <div class="field">
+            <label for="f-tel">Telefone</label>
+            <input type="tel" id="f-tel" name="telefone">
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-servico">Serviço de interesse</label>
+          <select id="f-servico" name="servico">
+            <option>Aplicação de Unhas em Gel</option>
+            <option>Blindagem de Unhas (Signature)</option>
+            <option>Aplicação de Gel na Unha Natural</option>
+            <option>Verniz Gel</option>
+            <option>Verniz Tradicional</option>
+            <option>Manutenção de Unhas</option>
+            <option>Remoção de Produto</option>
+            <option>Cuticulagem</option>
+            <option>Reposição de Unhas</option>
+            <option>Outro</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-msg">Mensagem</label>
+          <textarea id="f-msg" name="mensagem" placeholder="Diga-me um pouco sobre o que procura…"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          Enviar pelo WhatsApp
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <p class="form-note">Ao enviar, abrimos o WhatsApp com a sua mensagem já preenchida.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ ESTÚDIO / LOCAL ============ -->
+  <section class="studio" id="estudio">
+    <div class="wrap">
+      <div class="studio-info reveal">
+        <div class="eyebrow"><svg class="drop"><use href="#icon-drop"/></svg> onde</div>
+        <h2>Estúdio</h2>
+        <p class="studio-city">Porto, Portugal</p>
+        <p class="studio-note-addr">Av. dos Combatentes da Grande Guerra 610, Loja G, 4200-211 Porto</p>
+        <ul class="studio-hours">
+          <li><span>Segunda a sexta</span><span>8h00 – 22h00</span></li>
+          <li><span>Sábado</span><span>8h00 – 16h00</span></li>
+          <li><span>Domingo</span><span>Encerrado</span></li>
+        </ul>
+        <p class="studio-note"><strong>Atendimento com hora marcada.</strong> Reserve o seu horário pelo WhatsApp ou online — o estúdio recebe-a num ambiente calmo e cuidado, pensado para si.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:16px 28px; align-items:center; margin-top:34px;">
+          <a class="btn btn-primary" href="#contacto" style="margin-top:0;">Marcar horário</a>
+          <a href="https://www.google.com/maps/place/Lenny+Amorim+Beauty+Studio/@41.1656479,-8.6006279,831m/data=!3m3!1e3!4b1!5s0xd24645c228d363d:0xc639e6c6e9a3cd40!4m6!3m5!1s0xd2465291347763d:0x82c7d230d2717b89!8m2!3d41.1656439!4d-8.598053!16s%2Fg%2F11kj4r5jq9?entry=ttu&g_ep=EgoyMDI2MDgxNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" style="font-size:12.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold-soft); border-bottom:1px solid rgba(198,166,107,.4); padding-bottom:3px; transition:color .35s, border-color .35s;" onmouseover="this.style.color='var(--cream)';this.style.borderColor='var(--gold)'" onmouseout="this.style.color='var(--gold-soft)';this.style.borderColor='rgba(198,166,107,.4)'">Ver no Google Maps ↗</a>
+        </div>
+      </div>
+      <div class="studio-map reveal">
+        <iframe src="https://www.google.com/maps?q=41.1656439,-8.598053&z=17&output=embed" style="position:absolute; inset:0; width:100%; height:100%; border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localização — Lenny Amorim Beauty Studio"></iframe>
+        <div style="position:absolute; left:16px; bottom:16px; z-index:2; display:flex; align-items:center; gap:8px; background:rgba(11,10,9,.78); backdrop-filter:blur(6px); border:1px solid rgba(244,236,225,.14); border-radius:2px; padding:10px 16px;">
+          <svg class="pin" viewBox="0 0 24 24" style="width:16px;height:16px;"><path d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg>
+          <span style="font-family:var(--serif); font-size:14px; color:var(--cream);">Porto, Portugal</span>
+        </div>
+        <div style="position:absolute; right:16px; top:16px; z-index:2; display:flex; align-items:center; gap:6px; background:rgba(11,10,9,.78); backdrop-filter:blur(6px); border:1px solid rgba(244,236,225,.14); border-radius:2px; padding:8px 14px; font-size:12.5px; color:var(--gold-soft); letter-spacing:.03em;">
+          ★ 4,9 <span style="color:var(--taupe-dim);">(50+ avaliações)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <a href="#top" class="footer-logo" aria-label="Lenny Amorim Beauty Studio — início">
+        <img src="images/logo.png" alt="Lenny Amorim Beauty Studio">
+      </a>
+      <ul class="footer-nav">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#portfolio">Portfólio</a></li>
+        <li><a href="#estudio">Estúdio</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <div class="footer-social">
+        <a href="https://instagram.com/lennyamorimstudio" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.2c2.7 0 3 0 4.1.06 1.1.05 1.8.22 2.4.46.6.24 1.1.55 1.6 1.06.5.5.82 1 1.06 1.6.24.6.4 1.3.46 2.4.06 1.1.06 1.4.06 4.1s0 3-.06 4.1c-.05 1.1-.22 1.8-.46 2.4a4.3 4.3 0 0 1-1.06 1.6c-.5.5-1 .82-1.6 1.06-.6.24-1.3.4-2.4.46-1.1.06-1.4.06-4.1.06s-3 0-4.1-.06c-1.1-.05-1.8-.22-2.4-.46a4.3 4.3 0 0 1-1.6-1.06 4.3 4.3 0 0 1-1.06-1.6c-.24-.6-.4-1.3-.46-2.4C2.2 15 2.2 14.7 2.2 12s0-3 .06-4.1c.05-1.1.22-1.8.46-2.4.24-.6.55-1.1 1.06-1.6.5-.5 1-.82 1.6-1.06.6-.24 1.3-.4 2.4-.46C9 2.2 9.3 2.2 12 2.2Zm0 1.8c-2.65 0-2.96 0-4.02.06-.9.04-1.4.18-1.72.31-.43.17-.75.37-1.08.7-.33.33-.53.65-.7 1.08-.13.32-.27.82-.31 1.72C4.1 9.04 4.1 9.35 4.1 12s0 2.96.06 4.02c.04.9.18 1.4.31 1.72.17.43.37.75.7 1.08.33.33.65.53 1.08.7.32.13.82.27 1.72.31 1.06.06 1.37.06 4.02.06s2.96 0 4.02-.06c.9-.04 1.4-.18 1.72-.31.43-.17.75-.37 1.08-.7.33-.33.53-.65.7-1.08.13-.32.27-.82.31-1.72.06-1.06.06-1.37.06-4.02s0-2.96-.06-4.02c-.04-.9-.18-1.4-.31-1.72a2.9 2.9 0 0 0-.7-1.08 2.9 2.9 0 0 0-1.08-.7c-.32-.13-.82-.27-1.72-.31C14.96 4 14.65 4 12 4Zm0 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm0 1.8a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4Zm4.7-2a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1Z"/></svg>
+        </a>
+        <a href="https://wa.me/351939920056" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.9-1.3C8.4 21.6 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2Zm5.7 14.2c-.2.6-1.3 1.2-1.8 1.3-.5.1-1 .2-3.2-.7-2.7-1.1-4.4-3.9-4.5-4.1-.1-.2-1.1-1.4-1.1-2.7 0-1.3.7-1.9.9-2.2.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.6.7 1.9.8 2 .1.2.1.4 0 .6-.1.2-.2.3-.3.5-.2.2-.3.3-.5.5-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.2 2.4 1.5 2.7 1.7.3.2.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.7.8 2 .9.3.2.5.2.6.3.1.2.1.8-.1 1.4Z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61584099922437" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94Z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Porto, Portugal · © <span id="year"></span> Lenny Amorim Beauty Studio. Todos os direitos reservados.</span>
+      <a href="#top">Voltar ao topo ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasHover = window.matchMedia('(hover:hover)').matches;
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* preloader */
+  var preloader = document.getElementById('preloader');
+  if(preloader){
+    var hidePreloader = function(){ preloader.classList.add('done'); };
+    window.addEventListener('load', function(){ setTimeout(hidePreloader, 300); });
+    setTimeout(hidePreloader, 2200); /* fallback */
+  }
+
+  /* nav scroll state */
+  var nav = document.getElementById('siteNav');
+  function onScroll(){
+    if(window.scrollY > 60){ nav.classList.add('scrolled'); } else { nav.classList.remove('scrolled'); }
+  }
+  document.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+
+  /* mobile menu */
+  var burger = document.getElementById('burger');
+  var menu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', function(){
+    var open = menu.classList.toggle('open');
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      menu.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded','false');
+      document.body.style.overflow = '';
+    });
+  });
+
+  /* scroll reveal */
+  var revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold:0.14, rootMargin:'0px 0px -60px 0px' });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('is-visible'); });
+  }
+
+  /* hero parallax */
+  var heroImg = document.getElementById('heroImg');
+  if(!reduceMotion && heroImg){
+    var ticking = false;
+    function updateParallax(){
+      var y = window.scrollY;
+      var factor = 0.28;
+      heroImg.style.transform = 'translateY(' + Math.min(y*factor, 140) + 'px) scale(1.08)';
+      ticking = false;
+    }
+    document.addEventListener('scroll', function(){
+      if(!ticking){ window.requestAnimationFrame(updateParallax); ticking = true; }
+    }, { passive:true });
+    updateParallax();
+  }
+
+  /* magnetic buttons */
+  if(!reduceMotion && hasHover){
+    document.querySelectorAll('.btn-primary, .carousel-arrow, .lightbox-arrow').forEach(function(btn){
+      btn.addEventListener('mousemove', function(e){
+        var r = btn.getBoundingClientRect();
+        var x = e.clientX - r.left - r.width/2;
+        var y = e.clientY - r.top - r.height/2;
+        btn.style.transform = 'translate(' + (x*0.16) + 'px,' + (y*0.16 - (btn.classList.contains('btn-primary') ? 0 : 0)) + 'px)';
+      });
+      btn.addEventListener('mouseleave', function(){ btn.style.transform = ''; });
+    });
+  }
+
+  /* animated counters */
+  var counters = document.querySelectorAll('.counter');
+  function animateCounter(el){
+    var target = parseFloat(el.dataset.target);
+    var decimals = parseInt(el.dataset.decimals || '0', 10);
+    var suffix = el.dataset.suffix || '';
+    if(reduceMotion){ el.textContent = target.toFixed(decimals) + suffix; return; }
+    var start = null, duration = 1400;
+    function tick(now){
+      if(start === null) start = now;
+      var p = Math.min((now-start)/duration, 1);
+      var eased = 1 - Math.pow(1-p, 3);
+      el.textContent = (target*eased).toFixed(decimals) + suffix;
+      if(p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  if(counters.length && 'IntersectionObserver' in window){
+    var cio = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){ animateCounter(entry.target); cio.unobserve(entry.target); }
+      });
+    }, { threshold:0.6 });
+    counters.forEach(function(c){ cio.observe(c); });
+  } else {
+    counters.forEach(animateCounter);
+  }
+
+  /* scrollspy nav */
+  var spySections = ['sobre','servicos','portfolio','depoimentos','contacto','estudio']
+    .map(function(id){ return document.getElementById(id); }).filter(Boolean);
+  var navLinks = document.querySelectorAll('.nav-links a');
+  if(spySections.length && 'IntersectionObserver' in window){
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          var id = entry.target.id;
+          navLinks.forEach(function(a){
+            a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+          });
+        }
+      });
+    }, { rootMargin:'-45% 0px -50% 0px', threshold:0 });
+    spySections.forEach(function(s){ spy.observe(s); });
+  }
+
+  /* services accordion */
+  var catCards = document.querySelectorAll('.cat-card');
+  var servicePanel = document.getElementById('servicePanel');
+  var serviceLists = document.querySelectorAll('.service-list');
+  var openCat = null;
+  catCards.forEach(function(card){
+    card.addEventListener('click', function(){
+      var cat = card.dataset.cat;
+      if(openCat === cat){
+        card.classList.remove('active');
+        card.setAttribute('aria-expanded', 'false');
+        servicePanel.classList.remove('open');
+        openCat = null;
+        return;
+      }
+      catCards.forEach(function(c){ c.classList.remove('active'); c.setAttribute('aria-expanded', 'false'); });
+      serviceLists.forEach(function(l){ l.classList.toggle('is-active', l.dataset.cat === cat); });
+      card.classList.add('active');
+      card.setAttribute('aria-expanded', 'true');
+      servicePanel.classList.add('open');
+      openCat = cat;
+      if(!reduceMotion){
+        setTimeout(function(){
+          var y = servicePanel.getBoundingClientRect().top + window.scrollY - 100;
+          if(servicePanel.getBoundingClientRect().top < 0){ window.scrollTo({ top:y, behavior:'smooth' }); }
+        }, 350);
+      }
+    });
+  });
+
+  /* ================= PORTFOLIO CAROUSEL + LIGHTBOX ================= */
+  var track = document.getElementById('carouselTrack');
+  var slides = track ? Array.prototype.slice.call(track.children) : [];
+  var lightbox = document.getElementById('lightbox');
+  var lbClose = document.getElementById('lightboxClose');
+
+  if(track && slides.length){
+    var total = slides.length;
+    var index = 0;
+    var dotsWrap = document.getElementById('carDots');
+    var currentEl = document.getElementById('carCurrent');
+    var totalEl = document.getElementById('carTotal');
+    var pad2 = function(n){ return String(n).length < 2 ? '0'+n : String(n); };
+    totalEl.textContent = pad2(total);
+
+    slides.forEach(function(_, i){
+      var dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Ir para a imagem ' + (i+1));
+      dot.addEventListener('click', function(){ goTo(i); });
+      dotsWrap.appendChild(dot);
+    });
+    var dots = Array.prototype.slice.call(dotsWrap.children);
+
+    function render(){
+      track.style.transform = 'translateX(-' + (index*100) + '%)';
+      dots.forEach(function(d,i){ d.classList.toggle('active', i === index); });
+      currentEl.textContent = pad2(index+1);
+    }
+    function goTo(i){
+      index = (i + total) % total;
+      render();
+      resetAutoplay();
+      if(lightbox.classList.contains('open')) updateLightboxImage();
+    }
+    document.getElementById('carPrev').addEventListener('click', function(){ goTo(index-1); });
+    document.getElementById('carNext').addEventListener('click', function(){ goTo(index+1); });
+
+    /* autoplay */
+    var autoplayId = null;
+    function startAutoplay(){
+      if(reduceMotion) return;
+      autoplayId = setInterval(function(){ goTo(index+1); }, 5200);
+    }
+    function resetAutoplay(){ clearInterval(autoplayId); startAutoplay(); }
+    var carouselRoot = document.getElementById('portfolioCarousel');
+    carouselRoot.addEventListener('mouseenter', function(){ clearInterval(autoplayId); });
+    carouselRoot.addEventListener('mouseleave', function(){ startAutoplay(); });
+    startAutoplay();
+
+    /* swipe */
+    var startX = null;
+    track.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; clearInterval(autoplayId); }, { passive:true });
+    track.addEventListener('touchend', function(e){
+      if(startX === null) return;
+      var dx = e.changedTouches[0].clientX - startX;
+      if(Math.abs(dx) > 40){ dx < 0 ? goTo(index+1) : goTo(index-1); } else { resetAutoplay(); }
+      startX = null;
+    });
+
+    /* lightbox */
+    var lightboxImg = document.getElementById('lightboxImg');
+    var lightboxCap = document.getElementById('lightboxCaption');
+    function updateLightboxImage(){
+      var img = slides[index].querySelector('img');
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightboxCap.textContent = img.alt.split(' — ')[0];
+    }
+    function openLightbox(i){
+      goTo(i);
+      updateLightboxImage();
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    slides.forEach(function(slide, i){
+      slide.addEventListener('click', function(){ openLightbox(i); });
+    });
+    document.getElementById('lightboxPrev').addEventListener('click', function(){ goTo(index-1); });
+    document.getElementById('lightboxNext').addEventListener('click', function(){ goTo(index+1); });
+    document.addEventListener('keydown', function(e){
+      if(!lightbox.classList.contains('open')) return;
+      if(e.key === 'ArrowLeft') goTo(index-1);
+      if(e.key === 'ArrowRight') goTo(index+1);
+    });
+
+    render();
+  }
+
+  function closeLightbox(){
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  lbClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', function(e){ if(e.target === lightbox){ closeLightbox(); } });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ closeLightbox(); } });
+
+  /* ================= TESTIMONIALS CAROUSEL ================= */
+  var tTrack = document.getElementById('tCarouselTrack');
+  var tPages = tTrack ? Array.prototype.slice.call(tTrack.children) : [];
+
+  if(tTrack && tPages.length){
+    var tTotal = tPages.length;
+    var tIndex = 0;
+    var tDotsWrap = document.getElementById('tDots');
+
+    tPages.forEach(function(_, i){
+      var dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Ir para depoimentos, página ' + (i+1));
+      dot.addEventListener('click', function(){ tGoTo(i); });
+      tDotsWrap.appendChild(dot);
+    });
+    var tDots = Array.prototype.slice.call(tDotsWrap.children);
+
+    function tRender(){
+      tTrack.style.transform = 'translateX(-' + (tIndex*100) + '%)';
+      tDots.forEach(function(d,i){ d.classList.toggle('active', i === tIndex); });
+    }
+    function tGoTo(i){
+      tIndex = (i + tTotal) % tTotal;
+      tRender();
+      tResetAutoplay();
+    }
+    var tPrevBtn = document.getElementById('tPrev');
+    var tNextBtn = document.getElementById('tNext');
+    if(tPrevBtn) tPrevBtn.addEventListener('click', function(){ tGoTo(tIndex-1); });
+    if(tNextBtn) tNextBtn.addEventListener('click', function(){ tGoTo(tIndex+1); });
+
+    /* autoplay */
+    var tAutoplayId = null;
+    function tStartAutoplay(){
+      if(reduceMotion) return;
+      tAutoplayId = setInterval(function(){ tGoTo(tIndex+1); }, 6500);
+    }
+    function tResetAutoplay(){ clearInterval(tAutoplayId); tStartAutoplay(); }
+    var tCarouselRoot = document.getElementById('testimonialCarousel');
+    tCarouselRoot.addEventListener('mouseenter', function(){ clearInterval(tAutoplayId); });
+    tCarouselRoot.addEventListener('mouseleave', function(){ tStartAutoplay(); });
+    tStartAutoplay();
+
+    /* swipe */
+    var tStartX = null;
+    tTrack.addEventListener('touchstart', function(e){ tStartX = e.touches[0].clientX; clearInterval(tAutoplayId); }, { passive:true });
+    tTrack.addEventListener('touchend', function(e){
+      if(tStartX === null) return;
+      var dx = e.changedTouches[0].clientX - tStartX;
+      if(Math.abs(dx) > 40){ dx < 0 ? tGoTo(tIndex+1) : tGoTo(tIndex-1); } else { tResetAutoplay(); }
+      tStartX = null;
+    });
+
+    /* keyboard nav when carousel is focused/hovered */
+    tCarouselRoot.addEventListener('keydown', function(e){
+      if(e.key === 'ArrowLeft') tGoTo(tIndex-1);
+      if(e.key === 'ArrowRight') tGoTo(tIndex+1);
+    });
+
+    tRender();
+  }
+
+  /* contact form -> whatsapp */
+  var form = document.getElementById('contactForm');
+  var WHATSAPP_NUMBER = '351939920056';
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var nome = form.nome.value.trim();
+    var tel = form.telefone.value.trim();
+    var servico = form.servico.value;
+    var msg = form.mensagem.value.trim();
+    var text = 'Olá! Sou ' + (nome || '—') + '.\n' +
+               'Interesse: ' + servico + '\n' +
+               (tel ? ('Telefone: ' + tel + '\n') : '') +
+               (msg ? ('Mensagem: ' + msg) : 'Gostaria de marcar um horário.');
+    var url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text);
+    window.open(url, '_blank', 'noopener');
+  });
+})();
+</script>
+</body>
+</html>
