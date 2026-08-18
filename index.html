@@ -164,7 +164,7 @@
   }
   .nav.scrolled{ background:rgba(11,10,9,.86); backdrop-filter:blur(10px); padding-block:14px; border-color:rgba(244,236,225,.08); }
   .nav-logo{ display:flex; align-items:center; gap:10px; font-family:var(--script); font-size:26px; color:var(--cream); }
-  .nav-logo img{ height:75px; width:auto; transition:height .5s var(--ease); }
+  .nav-logo img{ height:52px; width:auto; transition:height .5s var(--ease); }
   .nav.scrolled .nav-logo img{ height:34px; }
   .nav-links{ display:flex; gap:38px; }
   .nav-links a{
@@ -337,7 +337,7 @@
   .cs-index{ font-family:var(--serif); font-style:italic; color:var(--gold-soft); font-size:14px; }
   .cs-title{ font-family:var(--serif); font-size:clamp(16px,2vw,22px); color:var(--cream); }
   .carousel-arrow{
-    position:absolute; top:50%; transform:translateY(-50%); width:52px; height:52px; border-radius:50%;
+    position:absolute; top:50%; width:52px; height:52px; border-radius:50%;
     background:rgba(11,10,9,.55); border:1px solid rgba(244,236,225,.26); backdrop-filter:blur(6px);
     display:flex; align-items:center; justify-content:center; color:var(--cream); transition:all .4s var(--ease); z-index:3;
   }
@@ -405,9 +405,24 @@
 
   /* ================= TESTEMUNHOS ================= */
   .testimonials .section-head{ margin-left:auto; margin-right:auto; text-align:center; }
+  .t-carousel{ padding-inline:56px; }
   .t-carousel .carousel-viewport{ box-shadow:none; border-radius:0; }
   .t-page{
     flex:0 0 100%; display:grid; grid-template-columns:repeat(3,1fr); gap:22px; align-items:stretch;
+  }
+  /* minimalist, transparent nav for testimonials — arrows live in the reserved gutter (outside the clipped viewport), never over the text */
+  .t-carousel .carousel-arrow{
+    width:34px; height:34px; background:transparent; border:1px solid rgba(244,236,225,.16);
+    backdrop-filter:none; opacity:.5;
+  }
+  .t-carousel .carousel-arrow.prev{ left:0; }
+  .t-carousel .carousel-arrow.next{ right:0; }
+  .t-carousel .carousel-arrow:hover{ opacity:1; background:rgba(198,166,107,.1); border-color:var(--gold); color:var(--gold); }
+  .t-carousel .carousel-arrow svg{ width:14px; height:14px; }
+  @media (hover:hover){
+    .t-carousel .carousel-arrow{ opacity:0; transition:opacity .5s var(--ease), background .4s, border-color .4s, color .4s; }
+    .t-carousel:hover .carousel-arrow{ opacity:.55; }
+    .t-carousel .carousel-arrow:hover{ opacity:1; }
   }
   .t-card{
     border:1px solid rgba(244,236,225,.12); border-radius:2px; padding:34px 28px;
@@ -455,7 +470,7 @@
   footer{ padding-block:56px 34px; border-top:1px solid rgba(244,236,225,.1); }
   .footer-top{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:30px; padding-bottom:40px; }
   .footer-logo{ display:flex; align-items:center; gap:12px; }
-  .footer-logo img{ height:75px; width:auto; }
+  .footer-logo img{ height:56px; width:auto; }
   .footer-nav{ display:flex; gap:28px; flex-wrap:wrap; }
   .footer-nav a{ font-size:12.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--taupe); transition:color .35s; }
   .footer-nav a:hover{ color:var(--gold); }
@@ -485,6 +500,9 @@
     .service-categories{ grid-template-columns:repeat(2,1fr); }
     .carousel-slide{ aspect-ratio:4/3.4; }
     .t-page{ grid-template-columns:1fr 1fr; }
+    .t-carousel{ padding-inline:44px; }
+    .t-carousel .carousel-arrow{ width:30px; height:30px; }
+    .t-carousel .carousel-arrow svg{ width:12px; height:12px; }
     .form-row{ grid-template-columns:1fr; }
     .about-facts{ grid-template-columns:1fr 1fr; }
     .studio-map{ min-height:260px; }
@@ -511,6 +529,10 @@
     .carousel-arrow{ width:40px; height:40px; }
     .carousel-arrow.prev{ left:8px; }
     .carousel-arrow.next{ right:8px; }
+    .t-carousel{ padding-inline:34px; }
+    .t-carousel .carousel-arrow{ width:28px; height:28px; opacity:.6; }
+    .t-carousel .carousel-arrow.prev{ left:0; }
+    .t-carousel .carousel-arrow.next{ right:0; }
     .lightbox-arrow{ width:42px; height:42px; }
     .lightbox-arrow.prev{ left:8px; }
     .lightbox-arrow.next{ right:8px; }
@@ -907,6 +929,82 @@
               <img src="images/portfolio-09-baby-boomer-francesa.jpg" alt="Baby Boomer e francesa perfeita — Lenny Amorim Beauty Studio" loading="lazy">
               <figcaption><span class="cs-index">09</span><span class="cs-title">Baby Boomer / Francesa Perfeita</span></figcaption>
             </figure>
+            <figure class="carousel-slide" data-index="9">
+              <img src="images/portfolio-10-verniz-nude-brilhante.jpg" alt="Verniz Gel nude brilhante — Lenny Amorim Beauty Studio" loading="lazy">
+              <figcaption><span class="cs-index">10</span><span class="cs-title">Verniz Gel — Nude Brilhante</span></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-index="10">
+              <img src="images/portfolio-11-verniz-magenta.jpg" alt="Verniz Gel magenta vibrante — Lenny Amorim Beauty Studio" loading="lazy">
+              <figcaption><span class="cs-index">11</span><span class="cs-title">Verniz Gel — Magenta Vibrante</span></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-index="11">
+              <img src="images/portfolio-12-francesa-bordo-dourada.jpg" alt="Francesa bordô com glitter dourado — Lenny Amorim Beauty Studio" loading="lazy">
+              <figcaption><span class="cs-index">12</span><span class="cs-title">Francesa Bordô com Dourado</span></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-index="12">
+              <img src="images/portfolio-13-verniz-chocolate-classico.jpg" alt="Verniz Gel chocolate clássico — Lenny Amorim Beauty Studio" loading="lazy">
+              <figcaption><span class="cs-index">13</span><span class="cs-title">Verniz Gel — Chocolate Clássico</span></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-index="13">
+              <img src="images/portfolio-14-nail-art-natalicia.jpg" alt="Nail Art com estrelas e laço natalício — Lenny Amorim Beauty Studio" loading="lazy">
+              <figcaption><span class="cs-index">14</span><span class="cs-title">Nail Art — Estrelas & Laço Natalício</span></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-index="14">
+              <img src="images/portfolio-15-nail-art-mista.jpg" alt="Nail Art com flor, listras e estrela — Lenny Amorim Beauty Studio" loading="lazy">
+              <figcaption><span class="cs-index">15</span><span class="cs-title">Nail Art — Flor, Listras & Estrela</span></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-index="15">
+              <img src="images/portfolio-16-encapsulada-prata-macro.jpg" alt="Encapsulada com glitter prateado, macro — Lenny Amorim Beauty Studio" loading="lazy">
+              <figcaption><span class="cs-index">16</span><span class="cs-title">Encapsulada — Glitter Prateado</span></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-index="16">
+              <img src="images/portfolio-17-verniz-vermelho-glitter.jpg" alt="Verniz Gel vermelho com glitter degradê — Lenny Amorim Beauty Studio" loading="lazy">
+              <figcaption><span class="cs-index">17</span><span class="cs-title">Verniz Gel — Vermelho com Glitter</span></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-index="17">
+              <img src="images/portfolio-18-nail-art-flocos-neve.jpg" alt="Nail Art com flocos de neve — Lenny Amorim Beauty Studio" loading="lazy">
+              <figcaption><span class="cs-index">18</span><span class="cs-title">Nail Art — Flocos de Neve</span></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-index="18">
+              <img src="images/portfolio-19-francesa-vermelha-shimmer.jpg" alt="Francesa com ponta vermelha shimmer — Lenny Amorim Beauty Studio" loading="lazy">
+              <figcaption><span class="cs-index">19</span><span class="cs-title">Francesa — Ponta Vermelha Shimmer</span></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-index="19">
+              <img src="images/portfolio-20-encapsulada-verde-textura.jpg" alt="Encapsulada verde com textura floral — Lenny Amorim Beauty Studio" loading="lazy">
+              <figcaption><span class="cs-index">20</span><span class="cs-title">Encapsulada — Verde Textura Floral</span></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-index="20">
+              <img src="images/portfolio-21-francesa-branca-foil.jpg" alt="Francesa branca com acento em foil — Lenny Amorim Beauty Studio" loading="lazy">
+              <figcaption><span class="cs-index">21</span><span class="cs-title">Francesa Branca com Foil</span></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-index="21">
+              <img src="images/portfolio-22-nail-art-bordo-estrela.jpg" alt="Nail Art bordô com bolinhas e estrela — Lenny Amorim Beauty Studio" loading="lazy">
+              <figcaption><span class="cs-index">22</span><span class="cs-title">Nail Art — Bolinhas & Estrela Bordô</span></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-index="22">
+              <img src="images/portfolio-23-verniz-rosa-classico.jpg" alt="Verniz Gel rosa clássico — Lenny Amorim Beauty Studio" loading="lazy">
+              <figcaption><span class="cs-index">23</span><span class="cs-title">Verniz Gel — Rosa Clássico</span></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-index="23">
+              <img src="images/portfolio-24-verniz-vermelho-classico.jpg" alt="Verniz Gel vermelho clássico — Lenny Amorim Beauty Studio" loading="lazy">
+              <figcaption><span class="cs-index">24</span><span class="cs-title">Verniz Gel — Vermelho Clássico</span></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-index="24">
+              <img src="images/portfolio-25-verniz-glitter-nude.jpg" alt="Verniz Gel glitter nude suave — Lenny Amorim Beauty Studio" loading="lazy">
+              <figcaption><span class="cs-index">25</span><span class="cs-title">Verniz Gel — Glitter Nude Suave</span></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-index="25">
+              <img src="images/portfolio-26-nail-art-listras-bolinhas.jpg" alt="Nail Art com listras, bolinhas e dourado — Lenny Amorim Beauty Studio" loading="lazy">
+              <figcaption><span class="cs-index">26</span><span class="cs-title">Nail Art — Listras, Bolinhas & Dourado</span></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-index="26">
+              <img src="images/portfolio-27-francesa-shimmer-rose.jpg" alt="Francesa com shimmer rosé — Lenny Amorim Beauty Studio" loading="lazy">
+              <figcaption><span class="cs-index">27</span><span class="cs-title">Francesa — Shimmer Rosé</span></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-index="27">
+              <img src="images/portfolio-28-verniz-chocolate-profundo.jpg" alt="Verniz Gel chocolate profundo — Lenny Amorim Beauty Studio" loading="lazy">
+              <figcaption><span class="cs-index">28</span><span class="cs-title">Verniz Gel — Chocolate Profundo</span></figcaption>
+            </figure>
           </div>
         </div>
         <button class="carousel-arrow prev" id="carPrev" aria-label="Trabalho anterior">
@@ -917,7 +1015,7 @@
         </button>
         <div class="carousel-meta">
           <div class="carousel-dots" id="carDots"></div>
-          <div class="carousel-counter"><span id="carCurrent">01</span> / <span id="carTotal">09</span></div>
+          <div class="carousel-counter"><span id="carCurrent">01</span> / <span id="carTotal">28</span></div>
         </div>
       </div>
     </div>
@@ -1082,7 +1180,7 @@
         </button>
         <div class="carousel-meta">
           <div class="carousel-dots" id="tDots"></div>
-          <a href="https://www.google.com/maps/place/Lenny+Amorim+Beauty+Studio/@41.1656439,-8.598053,831m/data=!3m2!1e3!5s0xd24645c228d363d:0xc639e6c6e9a3cd40!4m8!3m7!1s0xd2465291347763d:0x82c7d230d2717b89!8m2!3d41.1656439!4d-8.598053!9m1!1b1!16s%2Fg%2F11kj4r5jq9?entry=ttu&g_ep=EgoyMDI2MDgxNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" class="carousel-counter" style="text-decoration:underline; text-underline-offset:3px;">Ver todas no Google ↗</a>
+          <a href="https://www.google.com/maps/place/Lenny+Amorim+Beauty+Studio/@41.1656439,-8.598053,17z" target="_blank" rel="noopener" class="carousel-counter" style="text-decoration:underline; text-underline-offset:3px;">Ver todas no Google ↗</a>
         </div>
       </div>
     </div>
@@ -1175,7 +1273,7 @@
         <p class="studio-note"><strong>Atendimento com hora marcada.</strong> Reserve o seu horário pelo WhatsApp ou online — o estúdio recebe-a num ambiente calmo e cuidado, pensado para si.</p>
         <div style="display:flex; flex-wrap:wrap; gap:16px 28px; align-items:center; margin-top:34px;">
           <a class="btn btn-primary" href="#contacto" style="margin-top:0;">Marcar horário</a>
-          <a href="https://www.google.com/maps/place/Lenny+Amorim+Beauty+Studio/@41.1656479,-8.6006279,831m/data=!3m3!1e3!4b1!5s0xd24645c228d363d:0xc639e6c6e9a3cd40!4m6!3m5!1s0xd2465291347763d:0x82c7d230d2717b89!8m2!3d41.1656439!4d-8.598053!16s%2Fg%2F11kj4r5jq9?entry=ttu&g_ep=EgoyMDI2MDgxNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" style="font-size:12.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold-soft); border-bottom:1px solid rgba(198,166,107,.4); padding-bottom:3px; transition:color .35s, border-color .35s;" onmouseover="this.style.color='var(--cream)';this.style.borderColor='var(--gold)'" onmouseout="this.style.color='var(--gold-soft)';this.style.borderColor='rgba(198,166,107,.4)'">Ver no Google Maps ↗</a>
+          <a href="https://www.google.com/maps/place/Lenny+Amorim+Beauty+Studio/@41.1656439,-8.598053,17z" target="_blank" rel="noopener" style="font-size:12.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold-soft); border-bottom:1px solid rgba(198,166,107,.4); padding-bottom:3px; transition:color .35s, border-color .35s;" onmouseover="this.style.color='var(--cream)';this.style.borderColor='var(--gold)'" onmouseout="this.style.color='var(--gold-soft)';this.style.borderColor='rgba(198,166,107,.4)'">Ver no Google Maps ↗</a>
         </div>
       </div>
       <div class="studio-map reveal">
